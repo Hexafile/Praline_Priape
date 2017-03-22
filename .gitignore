@@ -28,6 +28,7 @@ dependency-reduced-pom.xml
 bin/
 gen/
 out/
+.metadata/
 
 # Gradle files
 .gradle/

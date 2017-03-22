@@ -14,6 +14,7 @@ public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
     private static User anonymous = new User(-1, "Anonymous", "anonym");
     private String name;
+    private String surname;
     private String alias;
     private int id = 0;
     private String email;
@@ -63,6 +64,14 @@ public class User implements Principal {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
 
     public String getPassword() {
         return this.password;
@@ -105,7 +114,7 @@ public class User implements Principal {
 
     @Override
     public String toString() {
-        return id + ": " + alias + ", " + name + " <" + email + ">";
+        return id + ": " + alias + ", " + name + ", " + surname + " <" + email + ">";
     }
 
     public String getAlias() {
@@ -162,6 +171,7 @@ public class User implements Principal {
         this.setEmail(dto.getEmail());
         this.setId(dto.getId());
         this.setName(dto.getName());
+        this.setSurname(dto.getSurname());
         this.setPassword(dto.getPassword());
     }
 
@@ -171,6 +181,7 @@ public class User implements Principal {
         dto.setEmail(this.getEmail());
         dto.setId(this.getId());
         dto.setName(this.getName());
+        dto.setSurname(this.getSurname());
         dto.setPassword(this.getPassword());
         return dto;
     }

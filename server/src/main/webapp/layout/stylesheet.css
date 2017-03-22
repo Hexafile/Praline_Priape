@@ -1,4 +1,15 @@
-/*
-.container-fluid {
-    position: inherit;
-}*/
+.thumbnail:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.thumbnail a {
+    text-align: center;
+    text-decoration: none;
+}
+
+.thumbail a>img {}
+
+.img {
+    height: 300px;
+}

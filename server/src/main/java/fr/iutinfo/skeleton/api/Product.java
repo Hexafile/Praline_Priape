@@ -1,6 +1,8 @@
 package fr.iutinfo.skeleton.api;
 
+import java.util.List;
 import java.security.Principal;
+import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +15,8 @@ public class Product implements Principal {
     
     private String name;
     private int id = 0;
-    private String dealer;
-    private String description;
+    private List<String> dealer = new ArrayList<>();
+ 	private String description;
     private int basePrice;
     private int promotionalAmount;
 	private boolean available =true;
@@ -23,14 +25,14 @@ public class Product implements Principal {
     public Product(int id,String name,String dealer,int basePrice) {
 		this.id = id;
 		this.name = name;
-		this.dealer=dealer;
+		this.dealer.add(dealer);
 		this.basePrice=basePrice;
 	}
     
     public Product(int id,String name,String dealer,int basePrice,String description) {
 		this.id = id;
 		this.name = name;
-		this.dealer=dealer;
+		this.dealer.add(dealer);
 		this.basePrice=basePrice;
 		this.description=description;
 	}
@@ -38,6 +40,34 @@ public class Product implements Principal {
     public static Product getAnonymousProduct() {
         return anonymous;
     }
+    
+    public int size() {
+		return dealer.size();
+	}
+
+	public boolean isEmpty() {
+		return dealer.isEmpty();
+	}
+
+	public boolean add(String e) {
+		return dealer.add(e);
+	}
+
+	public String get(int index) {
+		return dealer.get(index);
+	}
+
+	public String set(int index, String element) {
+		return dealer.set(index, element);
+	}
+
+	public void add(int index, String element) {
+		dealer.add(index, element);
+	}
+
+	public String remove(int index) {
+		return dealer.remove(index);
+	}
     
     public int getId() {
 		return id;
@@ -87,17 +117,12 @@ public class Product implements Principal {
 		this.imageURL = imageURL;
 	}
 
-	@Override
 	public String getName() {
 		return name;
 	}
-
-	public String getDealer() {
-		return dealer;
-	}
-
-	public void setDealer(String dealer) {
-		this.dealer = dealer;
+	
+	public void addDealer(String d){
+		
 	}
 
 	public void initFromDto(ProductDto dto) {

@@ -1,6 +1,7 @@
 package fr.iutinfo.skeleton.common.dto;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +11,7 @@ public class ProductDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(ProductDto.class);
 	private String name;
 	private int id;
-    private String dealer;
+    private List<String> dealer;
     private String description;
     private int basePrice;
     private int promotionalAmount;
@@ -25,11 +26,11 @@ public class ProductDto implements Principal {
 		this.id = id;
 	}
 
-	public String getDealer() {
+	public List<String> getDealer() {
 		return dealer;
 	}
 
-	public void setDealer(String dealer) {
+	public void setDealer(List<String> dealer) {
 		this.dealer = dealer;
 	}
 

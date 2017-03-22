@@ -9,14 +9,23 @@ import org.slf4j.LoggerFactory;
 
 import java.security.Principal;
 import java.security.SecureRandom;
+import java.sql.Date;
 
 public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
     private static User anonymous = new User(-1, "Anonymous", "anonym");
+    private int id = 0;
+    private int role=0;
     private String name;
     private String surname;
     private String alias;
-    private int id = 0;
+    private String adresse;
+    private String societe;
+    private int tel;
+    private int sexe;
+    private int ptsFidelite;
+    private Date dateNaissance;
+    private boolean newsLetter;
     private String email;
     private String password;
     private String passwdHash;
@@ -41,11 +50,75 @@ public class User implements Principal {
         return anonymous;
     }
 
-    public String getEmail() {
+    public String getSociete() {
+		return societe;
+	}
+
+	public void setSociete(String societe) {
+		this.societe = societe;
+	}
+
+	public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public int getRole() {
+		return role;
+	}
+
+	public void setRole(int role) {
+		this.role = role;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public int getTel() {
+		return tel;
+	}
+
+	public void setTel(int tel) {
+		this.tel = tel;
+	}
+
+	public int getSexe() {
+		return sexe;
+	}
+
+	public void setSexe(int sexe) {
+		this.sexe = sexe;
+	}
+
+	public int getPtsFidelite() {
+		return ptsFidelite;
+	}
+
+	public void setPtsFidelite(int ptsFidelite) {
+		this.ptsFidelite = ptsFidelite;
+	}
+
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
+
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
+	public boolean isNewsLetter() {
+		return newsLetter;
+	}
+
+	public void setNewsLetter(boolean newsLetter) {
+		this.newsLetter = newsLetter;
+	}
+
+	public void setEmail(String email) {
         this.email = email;
     }
 
@@ -167,21 +240,37 @@ public class User implements Principal {
     }
 
     public void initFromDto(UserDto dto) {
-        this.setAlias(dto.getAlias());
-        this.setEmail(dto.getEmail());
         this.setId(dto.getId());
+        this.setRole(dto.getRole());
         this.setName(dto.getName());
         this.setSurname(dto.getSurname());
+        this.setAlias(dto.getAlias());
+        this.setAdresse(dto.getAdresse());
+        this.setSociete(dto.getSociete());
+        this.setTel(dto.getTel());
+        this.setSexe(dto.getSexe());
+        this.setPtsFidelite(dto.getPtsFidelite());
+        this.setDateNaissance(dto.getDateNaissance());
+        this.setNewsLetter(dto.isNewsLetter());
+        this.setEmail(dto.getEmail());
         this.setPassword(dto.getPassword());
     }
 
     public UserDto convertToDto() {
         UserDto dto = new UserDto();
-        dto.setAlias(this.getAlias());
-        dto.setEmail(this.getEmail());
         dto.setId(this.getId());
+        dto.setRole(this.getRole());
         dto.setName(this.getName());
         dto.setSurname(this.getSurname());
+        dto.setAlias(this.getAlias());
+        dto.setAdresse(this.getAdresse());
+        dto.setSociete(this.getSociete());
+        dto.setTel(this.getTel());
+        dto.setSexe(this.getSexe());
+        dto.setPtsFidelite(this.getPtsFidelite());
+        dto.setDateNaissance(this.getDateNaissance());
+        dto.setNewsLetter(this.isNewsLetter());
+        dto.setEmail(this.getEmail());
         dto.setPassword(this.getPassword());
         return dto;
     }

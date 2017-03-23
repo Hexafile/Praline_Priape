@@ -28,10 +28,12 @@ function getSecure(url) {
             success: function (data) {
                 afficheUser(data);
                 if(data.id == -1){
-                    $("#erreurSaisie").text("Le nom d'utilisateur ou le mot de passe est faux")
+                    $("#erreurSaisie").text("Le nom d'utilisateur ou le mot de passe est faux");
                 }else{
                     sessionStorage.setItem("login", $("#userlogin").val());
                     sessionStorage.setItem("password", $("#passwdlogin").val());
+                    console.log(sessionStorage.getItem("login"));
+                    console.log(sessionStorage.getItem("password"));
                     loadPage();
                 }
             },

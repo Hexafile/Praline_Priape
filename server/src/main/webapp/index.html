@@ -50,7 +50,7 @@
                         <li><a href="#"> Panier</a></li>
                         <li><a href="#"> WhishList</a></li>
                         <li><a href="#"> Paramètres</a></li>
-                        <li><a href="#"> Déconnexion</a></li>
+                        <li><a id="deconnection" href="#"> Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>
@@ -218,12 +218,6 @@
             <div class="btn-group" role="group">
                 <button type="button" id="connection" class="btn btn-primary">Se connecter</button>
             </div>
-            <div id="pasok">
-                <p>Vous n'êtes pas connecté</p>
-            </div>
-            <div id="ok">
-                <p>Vous êtes connecté</p>
-            </div>
         </div>
     </div>
 
@@ -280,7 +274,7 @@
                     $('#aliasdb').val(),
                     $('#emaildb').val(),
                     $('#passwddb').val()),
-                loadPage();
+            loadPage();
         });
 
         $("#connection").click(function() {
@@ -291,7 +285,7 @@
             $("#mainContainer").hide();
         });
         
-        $("#deconnectionBtn").click(function(){
+        $("#deconnection").click(function(){
             deconnection();
         })
 

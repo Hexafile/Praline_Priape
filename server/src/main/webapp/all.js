@@ -47,6 +47,33 @@ function getSecure(url) {
     }
 }
 
+function postProductBdd(name, vendeur, quantite, description, prix, promotion, image, url){
+    postProductGeneric(name, vendeur, quantite, description, prix, promotion, image, "v1/product/");
+}
+
+function postUserGeneric(name, vendeur, quantite, description, prix, promotion, image) {
+    console.log("postUserGeneric " + url)
+    $.ajax({
+        type: 'POST',
+        contentType: 'application/json',
+        url: url,
+        dataType: "json",
+        data: JSON.stringify({
+            "name": name,
+            "alias": alias,
+            "email": email,
+            "password": pwd,
+            "id": 0
+        }),
+        success: function (data, textStatus, jqXHR) {
+            afficheUser(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('postUser error: ' + textStatus);
+        }
+    });
+}
+
 function postUserBdd(name, alias, email, pwd) {
     postUserGeneric(name, alias, email, pwd, "v1/user/");
 }
@@ -100,11 +127,15 @@ function afficheListUsers(data) {
 }
 
 function loadPage() {
+    var childNodes = document.getElementById("navRight").childNodes;
     if(sessionStorage.getItem("login") === "null" && sessionStorage.getItem("password") === "null"){
         $("#monCompteBtn").hide();
         $("#signupBtn").show();
         $("#signinBtn").show();
     }else{
+        if(childNodes[0] === undefined){
+            $("#navRight").append("<h1 id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
+        }
         $("#monCompteBtn").show();
         $("#signupBtn").hide();
         $("#signinBtn").hide();

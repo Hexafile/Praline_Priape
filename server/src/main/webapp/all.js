@@ -28,9 +28,11 @@ function getByAnnotation() {
        },
        success: function (data) {
         afficheUser(data);
+        $("#ok").show();   
        },
        error : function(jqXHR, textStatus, errorThrown) {
        			alert('error: ' + textStatus);
+                $("#pasok").show();
        		}
      });
      } else {

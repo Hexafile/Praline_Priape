@@ -32,8 +32,7 @@ function getSecure(url) {
                 }else{
                     sessionStorage.setItem("login", $("#userlogin").val());
                     sessionStorage.setItem("password", $("#passwdlogin").val());
-                    console.log(sessionStorage.getItem("login"));
-                    console.log(sessionStorage.getItem("password"));
+                    $("#navRight").append("<h1 id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
                     loadPage();
                 }
             },
@@ -109,7 +108,6 @@ function loadPage() {
         $("#monCompteBtn").show();
         $("#signupBtn").hide();
         $("#signinBtn").hide();
-        $("#navRight").append("<h1 id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
     }
     $("#mainContainer").show();
     $("#inscriptionContainer").hide();

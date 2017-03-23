@@ -23,6 +23,10 @@ public interface SocieteDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Societe findBySno(@Bind("sno") int sno);
 	
+	@SqlQuery("select * from societes where name = :name")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Societe findByName(@Bind("name") String name);
+	
 	@SqlQuery("select * from societes order by sno")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Societe> all();

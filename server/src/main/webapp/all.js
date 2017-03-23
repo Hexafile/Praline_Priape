@@ -28,18 +28,11 @@ function getSecure(url) {
             success: function (data) {
                 afficheUser(data);
                 if(data.id == -1){
-                    alert("T'es pas connecté");
+                    $("#erreurSaisie").text("Le nom d'utilisateur ou le mot de passe est faux")
                 }else{
-                    alert("T'es connecté");
                     sessionStorage.setItem("login", $("#userlogin").val());
                     sessionStorage.setItem("password", $("#passwdlogin").val());
-                    console.log(sessionStorage.getItem("login"));
-                    console.log(sessionStorage.getItem("password"));
                     loadPage();
-                    $("#signupBtn").hide();
-                    $("#signinBtn").hide();
-                    $("#monCompteBtn").show();
-                    $("#navRight").append("<h1>Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -106,10 +99,19 @@ function afficheListUsers(data) {
 }
 
 function loadPage() {
+    if(sessionStorage.getItem("login") === "null" && sessionStorage.getItem("password") === "null"){
+        $("#monCompteBtn").hide();
+        $("#signupBtn").show();
+        $("#signinBtn").show();
+    }else{
+        $("#monCompteBtn").show();
+        $("#signupBtn").hide();
+        $("#signinBtn").hide();
+        $("#navRight").append("<h1 id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
+    }
     $("#mainContainer").show();
     $("#inscriptionContainer").hide();
     $("#connectionContainer").hide();
-    $("#monCompteBtn").hide();
 }
 
 function signUp() {
@@ -122,4 +124,11 @@ function signIn() {
     $("#mainContainer").hide();
     $("#inscriptionContainer").hide();
     $("#connectionContainer").show();
+}
+
+function deconnection() {
+    sessionStorage.setItem("login", null);
+    sessionStorage.setItem("password", null);
+    $("#bienvenue").remove();
+    loadPage();
 }

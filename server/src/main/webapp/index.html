@@ -213,11 +213,11 @@
                 <p id="erreurSaisie"></p>
                 <input type="text" name="userlogin" id="userlogin" placeholder="Login" class="form-control" />
                 <input type="password" name="user" id="passwdlogin" placeholder="Password" class="form-control" />
-                <br/>
-            </div>
-            <div class="btn-group" role="group">
+                <div class="btn-group" role="group">
                 <button type="button" id="connection" class="btn btn-primary">Se connecter</button>
             </div>
+            </div>
+            
         </div>
     </div>
 
@@ -254,6 +254,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Script -->
     <script type="text/javascript">
         window.onload = loadPage();
@@ -282,7 +283,7 @@
         });
 
         $(".linkProduct").click(function() {
-            $("#mainContainer").hide();
+            description();
         });
         
         $("#deconnection").click(function(){
@@ -290,10 +291,7 @@
         })
 
         $("#lien1Btn").click(function() {
-            $("#mainContainer").hide();
-            $("#inscriptionContainer").hide();
-            $("#connectionContainer").hide();
-            $("#addProductContainer").show();
+            ajoutProduct();
         });
 
     </script>

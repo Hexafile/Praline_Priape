@@ -32,7 +32,7 @@ function getSecure(url) {
                 }else{
                     sessionStorage.setItem("login", $("#userlogin").val());
                     sessionStorage.setItem("password", $("#passwdlogin").val());
-                    $("#navRight").append("<h1 id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
+                    $("#navRight").append("<p id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</p>");
                     loadPage();
                 }
             },
@@ -134,27 +134,34 @@ function loadPage() {
         $("#signinBtn").show();
     }else{
         if(childNodes[0] === undefined){
-            $("#navRight").append("<h1 id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
+            $("#navRight").append("<p id=\"bienvenue\">Bienvenue, "+sessionStorage.getItem("login")+"</p>");
         }
         $("#monCompteBtn").show();
         $("#signupBtn").hide();
         $("#signinBtn").hide();
     }
+    cleanPage();
     $("#mainContainer").show();
-    $("#inscriptionContainer").hide();
-    $("#connectionContainer").hide();
 }
 
 function signUp() {
-    $("#mainContainer").hide();
-    $("#connectionContainer").hide();
+    cleanPage();
     $("#inscriptionContainer").show();
 }
 
 function signIn() {
-    $("#mainContainer").hide();
-    $("#inscriptionContainer").hide();
+    cleanPage();
     $("#connectionContainer").show();
+}
+
+function description(){
+    cleanPage();
+    $("#descriptionContainer").show();
+}
+
+function ajoutProduct(){
+    cleanPage();
+    $("#addProductContainer").show();
 }
 
 function deconnection() {
@@ -162,4 +169,13 @@ function deconnection() {
     sessionStorage.setItem("password", null);
     $("#bienvenue").remove();
     loadPage();
+}
+
+function cleanPage() {
+     $("#mainContainer").hide();
+     $("#inscriptionContainer").hide();
+     $("#connectionContainer").hide();
+     $("#addProductContainer").hide();
+     $("#descriptionContainer").hide();
+    
 }

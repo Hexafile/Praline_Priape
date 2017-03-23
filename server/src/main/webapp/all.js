@@ -94,6 +94,7 @@ function afficheListUsers(data) {
 }
 
 function loadPage() {
+    $("#mainContainer").show();
     $("#inscriptionContainer").hide();
 }
 

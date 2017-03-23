@@ -252,11 +252,14 @@
     <!-- Script -->
     <script type="text/javascript">
         window.onload = loadPage();
-        $(document).ready(function() {
-
-            $("#signupBtn").click(signUp()); //Affiche le formulaire d'inscription $("#signinBtn").click(signIn()); //Affiche le formulaire d'inscription
-            /* $("#post-bdd").click(function() { postUserBdd( $('#userdb').val(), $('#aliasdb').val(), $('#emaildb').val(), $('#passwddb').val()) }); */
-
+        $("#signupBtn").click(function() {
+            signUp()
+        });
+        $("#signinBtn").click(function() {
+            signIn()
+        });
+        $("#accueilBtn").click(function() {
+            loadPage()
         });
 
     </script>

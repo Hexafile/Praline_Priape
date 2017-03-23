@@ -262,6 +262,15 @@
             loadPage()
         });
 
+        $("#post-bdd").click(function() {
+            postUserBdd(
+                    $('#userdb').val(),
+                    $('#aliasdb').val(),
+                    $('#emaildb').val(),
+                    $('#passwddb').val()),
+                loadPage();
+        });
+
     </script>
 
 </body>

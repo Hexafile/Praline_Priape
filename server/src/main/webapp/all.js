@@ -106,14 +106,3 @@ function signUp() {
 function signIn() {
     $("#mainContainer").hide();
 }
-
-/* Fonction d'inscription */
-$(document).ready(function () {
-    $("#post-bdd").click(function () {
-        postUserBdd(
-            $('#userdb').val(),
-            $('#aliasdb').val(),
-            $('#emaildb').val(),
-            $('#passwddb').val())
-    });
-});

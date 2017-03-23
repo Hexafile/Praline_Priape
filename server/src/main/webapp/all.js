@@ -96,13 +96,17 @@ function afficheListUsers(data) {
 function loadPage() {
     $("#mainContainer").show();
     $("#inscriptionContainer").hide();
+    $("#connectionContainer").hide();
 }
 
 function signUp() {
     $("#mainContainer").hide();
+    $("#connectionContainer").hide();
     $("#inscriptionContainer").show();
 }
 
 function signIn() {
     $("#mainContainer").hide();
+    $("#inscriptionContainer").hide();
+    $("#connectionContainer").show();
 }

@@ -249,6 +249,27 @@
         </div>
     </div>
 
+    <!-- Formulaire de connection -->
+    <div class="connectionContainer">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>S'identifier</h1>
+                <input type="text" name="userlogin" id="userlogin" placeholder="Login" class="form-control" />
+                <input type="password" name="user" id="passwdlogin" placeholder="Password" class="form-control" />
+                <br/>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" id="post-bdd" class="btn btn-primary">Se connecter</button>
+            </div>
+            <div id="pasok">
+                <p>Vous n'êtes pas connecté</p>
+            </div>
+            <div id="ok">
+                <p>Vous êtes connecté</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Script -->
     <script type="text/javascript">
         window.onload = loadPage();

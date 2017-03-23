@@ -19,9 +19,9 @@ public interface ProductDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Product> findByDealer(@Bind("dealer") String dealer);
 	
-	@SqlQuery("select * from products where id = :id")
+	@SqlQuery("select * from products where name = :name")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	Product findById(@Bind("id") int id);
+	Product findByName(@Bind("name") String name);
 	
 	@SqlQuery("select * from products order by id")
 	@RegisterMapperFactory(BeanMapperFactory.class)

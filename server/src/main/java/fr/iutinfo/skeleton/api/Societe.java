@@ -1,9 +1,11 @@
 package fr.iutinfo.skeleton.api;
 
+import java.security.Principal;
+
 import fr.iutinfo.skeleton.common.dto.ProductDto;
 import fr.iutinfo.skeleton.common.dto.SocieteDto;
 
-public class Societe {
+public class Societe implements Principal {
 
 	private int sno;
 	private String name;
@@ -13,6 +15,13 @@ public class Societe {
 	private String mail;
 	private String methodeLivraison;
 	private String livreur;
+	
+	public Societe(int sno, String name) {
+		this.sno=sno;
+		this.name=name;
+	}
+	
+	public Societe() {}
 	
 	public int getSno() {
 		return sno;

@@ -18,12 +18,21 @@ public class UserDto implements Principal {
     private int tel;
     private int sexe;
     private int ptsFidelite;
+    private Date dateInscription;
     private Date dateNaissance;
     private boolean newsLetter;
     private String email;
     private String password;
 
-    public String getSociete() {
+    public Date getDateInscription() {
+		return dateInscription;
+	}
+
+	public void setDateInscription(Date dateInscription) {
+		this.dateInscription = dateInscription;
+	}
+
+	public String getSociete() {
 		return societe;
 	}
 

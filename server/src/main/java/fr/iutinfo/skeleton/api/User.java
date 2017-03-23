@@ -14,7 +14,15 @@ import java.sql.Date;
 public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
     private static User anonymous = new User(-1, "Anonymous", "anonym");
-    private int id = 0;
+    public Date getDateInscription() {
+		return dateInscription;
+	}
+
+	public void setDateInscription(Date dateInscription) {
+		this.dateInscription = dateInscription;
+	}
+
+	private int id = 0;
     private int role=0;
     private String name;
     private String surname;
@@ -25,6 +33,7 @@ public class User implements Principal {
     private int sexe;
     private int ptsFidelite;
     private Date dateNaissance;
+    private Date dateInscription;
     private boolean newsLetter;
     private String email;
     private String password;
@@ -250,6 +259,7 @@ public class User implements Principal {
         this.setTel(dto.getTel());
         this.setSexe(dto.getSexe());
         this.setPtsFidelite(dto.getPtsFidelite());
+        this.setDateInscription(dto.getDateInscription());
         this.setDateNaissance(dto.getDateNaissance());
         this.setNewsLetter(dto.isNewsLetter());
         this.setEmail(dto.getEmail());
@@ -268,6 +278,7 @@ public class User implements Principal {
         dto.setTel(this.getTel());
         dto.setSexe(this.getSexe());
         dto.setPtsFidelite(this.getPtsFidelite());
+        dto.setDateInscription(this.getDateInscription());
         dto.setDateNaissance(this.getDateNaissance());
         dto.setNewsLetter(this.isNewsLetter());
         dto.setEmail(this.getEmail());

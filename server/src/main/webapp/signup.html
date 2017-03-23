@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <title>S'inscrire</title>
     <meta charset='utf-8'>
@@ -13,39 +14,42 @@
 
     <!-- Feuille de style -->
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-    
+
     <!-- Code local -->
     <script src="all.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <h1>S'inscrire</h1>
-                <!-- Formulaire d'inscription -->
-                <input type="text" name="userdb" id="userdb" placeholder="Nom" class="form-control"/>
-                <input type="text" name="user" id="aliasdb" placeholder="Login" class="form-control"/>
-                <input type="text" name="email" id="emaildb" placeholder="Email" class="form-control"/>
-                <input type="password" name="user" id="passwddb" placeholder="Mot de passe" class="form-control"/>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" id="post-bdd" class="btn btn-primary">Enregistrer</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h1>S'inscrire</h1>
+                    <!-- Formulaire d'inscription -->
+                    <input type="text" name="userdb" id="userdb" placeholder="Nom" class="form-control" />
+                    <input type="text" name="user" id="aliasdb" placeholder="Login" class="form-control" />
+                    <input type="text" name="email" id="emaildb" placeholder="Email" class="form-control" />
+                    <input type="password" name="user" id="passwddb" placeholder="Mot de passe" class="form-control" />
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="post-bdd" class="btn btn-primary">Enregistrer</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row" style="margin-top: 20px;">
-    </div>
     <script type="text/javascript">
-			$(document).ready(function() {
-				$("#post-bdd").click(function () {postUserBdd(
-				    $('#userdb').val(),
-				    $('#aliasdb').val(),
-				    $('#emaildb').val(),
-				    $('#passwddb').val())});
-			});
+        $(document).ready(function() {
+            $("#post-bdd").click(function() {
+                postUserBdd(
+                    $('#userdb').val(),
+                    $('#aliasdb').val(),
+                    $('#emaildb').val(),
+                    $('#passwddb').val())
+            });
+        });
 
     </script>
 </body>
+
 </html>

@@ -15,6 +15,7 @@ public class ProductDto implements Principal {
     private String description;
     private int basePrice;
     private int promotionalAmount;
+    private int amount;
 	private boolean available;
     private String imageURL;
 
@@ -56,6 +57,14 @@ public class ProductDto implements Principal {
 
 	public void setPromotionalAmount(int promotionalAmount) {
 		this.promotionalAmount = promotionalAmount;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 
 	public boolean isAvailable() {

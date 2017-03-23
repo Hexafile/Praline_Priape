@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.security.Principal;
-import java.sql.Date;
 
 public class UserDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(UserDto.class);
@@ -18,18 +17,18 @@ public class UserDto implements Principal {
     private int tel;
     private int sexe;
     private int ptsFidelite;
-    private Date dateInscription;
-    private Date dateNaissance;
+    private java.sql.Date dateInscription;
+    private java.sql.Date dateNaissance;
     private boolean newsLetter;
     private String email;
     private String password;
 
-    public Date getDateInscription() {
+    public java.sql.Date getDateInscription() {
 		return dateInscription;
 	}
 
-	public void setDateInscription(Date dateInscription) {
-		this.dateInscription = dateInscription;
+	public void setDateInscription(java.util.Date dateInscription) {
+		this.dateInscription = new java.sql.Date(dateInscription.getTime());;
 	}
 
 	public String getSociete() {
@@ -80,12 +79,12 @@ public class UserDto implements Principal {
 		this.ptsFidelite = ptsFidelite;
 	}
 
-	public Date getDateNaissance() {
+	public java.sql.Date getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
-		this.dateNaissance = dateNaissance;
+	public void setDateNaissance(java.util.Date dateNaissance) {
+		this.dateNaissance = new java.sql.Date(dateNaissance.getTime());
 	}
 
 	public boolean isNewsLetter() {

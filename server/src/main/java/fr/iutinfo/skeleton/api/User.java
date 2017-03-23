@@ -9,19 +9,11 @@ import org.slf4j.LoggerFactory;
 
 import java.security.Principal;
 import java.security.SecureRandom;
-import java.sql.Date;
 
 public class User implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
     private static User anonymous = new User(-1, "Anonymous", "anonym");
-    public Date getDateInscription() {
-		return dateInscription;
-	}
-
-	public void setDateInscription(Date dateInscription) {
-		this.dateInscription = dateInscription;
-	}
-
+    
 	private int id = 0;
     private int role=0;
     private String name;
@@ -32,8 +24,8 @@ public class User implements Principal {
     private int tel;
     private int sexe;
     private int ptsFidelite;
-    private Date dateNaissance;
-    private Date dateInscription;
+    private java.util.Date dateNaissance = new java.util.Date();
+    private java.util.Date dateInscription = new java.util.Date();
     private boolean newsLetter;
     private String email;
     private String password;
@@ -111,11 +103,11 @@ public class User implements Principal {
 		this.ptsFidelite = ptsFidelite;
 	}
 
-	public Date getDateNaissance() {
+	public java.util.Date getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(java.util.Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
@@ -155,7 +147,15 @@ public class User implements Principal {
 		this.surname = surname;
 	}
 
-    public String getPassword() {
+    public java.util.Date getDateInscription() {
+		return dateInscription;
+	}
+
+	public void setDateInscription(java.util.Date dateInscription) {
+		this.dateInscription = dateInscription;
+	}
+
+	public String getPassword() {
         return this.password;
     }
 
@@ -259,8 +259,8 @@ public class User implements Principal {
         this.setTel(dto.getTel());
         this.setSexe(dto.getSexe());
         this.setPtsFidelite(dto.getPtsFidelite());
-        this.setDateInscription(dto.getDateInscription());
-        this.setDateNaissance(dto.getDateNaissance());
+        this.setDateInscription(new java.util.Date(dto.getDateInscription().getTime()));
+        this.setDateNaissance(new java.util.Date(dto.getDateNaissance().getTime()));
         this.setNewsLetter(dto.isNewsLetter());
         this.setEmail(dto.getEmail());
         this.setPassword(dto.getPassword());

@@ -19,6 +19,7 @@ public class Product implements Principal {
  	private String description;
     private int basePrice;
     private int promotionalAmount;
+    private int amount;
 	private boolean available =true;
     private String imageURL;
     
@@ -103,6 +104,14 @@ public class Product implements Principal {
 		this.promotionalAmount = promotionalAmount;
 	}
 
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
 	public boolean isAvailable() {
 		return available;
 	}
@@ -134,6 +143,7 @@ public class Product implements Principal {
 		this.description=dto.getDescription();
 		this.basePrice=dto.getBasePrice();
 		this.promotionalAmount=dto.getPromotionalAmount();
+		this.amount=dto.getAmount();
 		this.available = dto.isAvailable();
 	    this.imageURL= dto.getImageURL();
 	}
@@ -146,9 +156,9 @@ public class Product implements Principal {
 	    dto.setDescription(description);
 	    dto.setBasePrice(basePrice);
 	    dto.setPromotionalAmount(promotionalAmount);
+	    dto.setAmount(amount);
 		dto.setAvailable(available);
 	    dto.setImageURL(imageURL);
-
 		return dto;
 	}
 }

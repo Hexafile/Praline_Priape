@@ -27,6 +27,9 @@ public interface UserDao {
 
     @SqlUpdate("delete from users where id = :id")
     void delete(@Bind("id") int id);
+    
+    @SqlUpdate("update users set role=:role,adresse=:adresse,societe=:societe,telephone=:telephone,sexe=:sexe,ptsfidelite=:ptsFidelite,dateinscription=:dateInscription,datenaissance=:dateNaissance,newsletter=:newsLetter,email=:email,passwdHash=:passwdHash,salt=:salt,search=:search where id = :id")
+    void update(@BindBean() User user);
 
     @SqlQuery("select * from users order by id")
     @RegisterMapperFactory(BeanMapperFactory.class)

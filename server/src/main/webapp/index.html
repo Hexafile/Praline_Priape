@@ -21,7 +21,7 @@
                 <a class="navbar-brand" href="#">Praline Priape</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a id="accueilBtn">Accueil</a></li>
                 <li><a href="#">Hommes</a></li>
                 <li><a href="#">Femmes</a></li>
                 <li><a href="#">Enfants</a></li>
@@ -250,27 +250,6 @@
 
     <!-- Script -->
     <script type="text/javascript">
-        $("#inscriptionContainer").hide();
-        $(document).ready(function() {
-            $("#signupBtn").click(function() {
-                $("#mainContainer").hide();
-                $("#inscriptionContainer").show();
-            });
-            $("#signinBtn").click(function() {
-                $("#mainContainer").hide();
-            });
-        });
-
-        /* Fonction d'inscription */
-        $(document).ready(function() {
-            $("#post-bdd").click(function() {
-                postUserBdd(
-                    $('#userdb').val(),
-                    $('#aliasdb').val(),
-                    $('#emaildb').val(),
-                    $('#passwddb').val())
-            });
-        });
 
     </script>
 

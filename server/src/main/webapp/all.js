@@ -93,3 +93,27 @@ function afficheListUsers(data) {
 	html = html + "</ul>";
 	$("#reponse").html(html);
 }
+
+function loadPage(){
+    $("#inscriptionContainer").hide();
+}
+
+function signUp(){
+    $("#mainContainer").hide();
+    $("#inscriptionContainer").show();
+}
+
+function signInForm(){
+    $("#mainContainer").hide();
+}
+
+/* Fonction d'inscription */
+$(document).ready(function() {
+    $("#post-bdd").click(function() {
+    postUserBdd(
+                    $('#userdb').val(),
+                    $('#aliasdb').val(),
+                    $('#emaildb').val(),
+                    $('#passwddb').val())
+            });
+        });

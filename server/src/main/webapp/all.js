@@ -27,11 +27,23 @@ function getSecure(url) {
             },
             success: function (data) {
                 afficheUser(data);
-                $("#ok").show();
+                if(data.id == -1){
+                    alert("T'es pas connecté");
+                }else{
+                    alert("T'es connecté");
+                    sessionStorage.setItem("login", $("#userlogin").val());
+                    sessionStorage.setItem("password", $("#passwdlogin").val());
+                    console.log(sessionStorage.getItem("login"));
+                    console.log(sessionStorage.getItem("password"));
+                    loadPage();
+                    $("#signupBtn").hide();
+                    $("#signinBtn").hide();
+                    $("#monCompteBtn").show();
+                    $("#navRight").append("<h1>Bienvenue, "+sessionStorage.getItem("login")+"</h1>");
+                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert('error: ' + textStatus);
-                $("#pasok").show();
             }
         });
     } else {
@@ -97,6 +109,7 @@ function loadPage() {
     $("#mainContainer").show();
     $("#inscriptionContainer").hide();
     $("#connectionContainer").hide();
+    $("#monCompteBtn").hide();
 }
 
 function signUp() {

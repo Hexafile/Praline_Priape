@@ -15,7 +15,7 @@ public interface SocieteDAO {
 	@SqlUpdate("create table societes(sno integer primary key autoincrement, nom varchar(50), numSiret int, adresse varchar(50), tel int, mail varchar(30), methodeLivraison varchar(50), livreur varchar(50)")
 	void createSocieteTable();
 	
-	@SqlUpdate("insert into Societe(nom, numSiret, adresse, tel, mail, methodeLivraison, livreur")
+	@SqlUpdate("insert into Societe(nom, numSiret, adresse, tel, mail, methodeLivraison, livreur) values(:nom, :numSiret, :adresse, :tel, :mail, :methodeLivraison, :livreur)")
 	@GetGeneratedKeys
 	int insert(@BindBean() Societe societe);
 	

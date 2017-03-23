@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 
 public class ConversationDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(UserDto.class);
-	private String name;
 	private int demandeurId;
 	private int conseilleId;
 	private boolean termine;
@@ -45,12 +44,8 @@ public class ConversationDto implements Principal {
 		this.note = note;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getName() {
-		return name;
+		return "conversation";
 	}
 
 }

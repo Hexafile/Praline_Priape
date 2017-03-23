@@ -1,10 +1,8 @@
-package fr.iutinfo.skeleton.api;
+package fr.iutinfo.skeleton.common.dto;
 
-import fr.iutinfo.skeleton.common.dto.ProductDto;
-import fr.iutinfo.skeleton.common.dto.SocieteDto;
+import java.security.Principal;
 
-public class Societe {
-
+public class SocieteDto implements Principal{
 	private int sno;
 	private String name;
 	private int numSiret;
@@ -19,12 +17,6 @@ public class Societe {
 	}
 	public void setSno(int sno) {
 		this.sno = sno;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public int getNumSiret() {
 		return numSiret;
@@ -62,28 +54,11 @@ public class Societe {
 	public void setLivreur(String livreur) {
 		this.livreur = livreur;
 	}
-	
-	public void initFromDto(SocieteDto dto) {
-		this.name=dto.getName();
-		this.sno=dto.getSno();
-		this.numSiret=dto.getNumSiret();
-		this.adresse=dto.getAdresse();
-		this.tel=dto.getTel();
-		this.mail=dto.getMail();
-		this.methodeLivraison=dto.getMethodeLivraison();
-		this.livreur=dto.getLivreur();
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
-	public SocieteDto convertToDto() {
-		SocieteDto dto = new SocieteDto();
-		dto.setName(name);
-		dto.setSno(sno);
-		dto.setNumSiret(numSiret);
-		dto.setAdresse(adresse);
-		dto.setTel(tel);
-		dto.setMail(mail);
-		dto.setMethodeLivraison(methodeLivraison);
-		dto.setLivreur(livreur);
-		return dto;
-	}
 }

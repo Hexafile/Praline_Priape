@@ -9,20 +9,12 @@ import fr.iutinfo.skeleton.common.dto.ConversationDto;
 
 public class Conversation implements Principal {
 	final static Logger logger = LoggerFactory.getLogger(User.class);
-	private String name;
+	private int id;
 	private int demandeurId;
 	private int conseilleId;
 	private boolean termine;
 	private int note;
 	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name){
-		this.name=name;
-	}
-
 	public int getDemandeurId() {
 		return demandeurId;
 	}
@@ -58,7 +50,6 @@ public class Conversation implements Principal {
 	public void initFromDto(ConversationDto dto){
 		this.setConseilleId(dto.getConseilleId());
 		this.setDemandeurId(dto.getDemandeurId());
-		this.setName(dto.getName());
 		this.setNote(dto.getNote());
 		this.setTermine(dto.isTermine());
 	}
@@ -67,10 +58,15 @@ public class Conversation implements Principal {
 		ConversationDto dto = new ConversationDto();
 		dto.setConseilleId(this.getConseilleId());
 		dto.setDemandeurId(this.getDemandeurId());
-		dto.setName(this.getName());
 		dto.setNote(this.getNote());
 		dto.setTermine(this.isTermine());
 		return dto;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "conversation";
 	}
 
 }

@@ -31,7 +31,7 @@ public interface ProductDAO {
 	void dropProductTable();
 	
 	@SqlUpdate("delete from products where id = :id")
-	void delete(@Bind int id);
+	void delete(@Bind("id") int id);
 	
 	void close();
 	

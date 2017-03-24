@@ -142,7 +142,9 @@ function listProductsGeneric(url) {
 
 function afficheListProducts(data) {
 	console.log(data);
-	
+	var nbProduits=data.length;
+	var nbLignes=nbProduits/6;
+	if(nbProduits%6==0) nbLignes++;
 }
 
 function afficheUser(data) {
@@ -207,14 +209,7 @@ function deconnection() {
 	loadPage();
 }
 
-function cleanPage() {
-	$("#mainContainer").hide();
-	$("#inscriptionContainer").hide();
-	$("#connectionContainer").hide();
-	$("#addProductContainer").hide();
-	$("#descriptionContainer").hide();
-	$("#carousel").hide();
-}
+
 
 function tailleCarousel() {
 	var height = document.body.clientHeight - 50;
@@ -226,7 +221,7 @@ function tailleCarousel() {
 		img[i].style.width = width;
 		img[i].style.height = height;
 	}
-	
+}	
 function cleanPage() {
 	$("#mainContainer").hide();
 	$("#inscriptionContainer").hide();
@@ -241,4 +236,3 @@ function panierShow(){
 	cleanPage();
 	$("#panierContainer").show();
 }
-} 

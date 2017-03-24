@@ -11,7 +11,6 @@ public class ProductDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(ProductDto.class);
 	private String name;
 	private int id;
-    private List<String> dealer;
     private String description;
     private int basePrice;
     private int promotionalAmount;
@@ -25,14 +24,6 @@ public class ProductDto implements Principal {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public List<String> getDealer() {
-		return dealer;
-	}
-
-	public void setDealer(List<String> dealer) {
-		this.dealer = dealer;
 	}
 
 	public String getDescription() {

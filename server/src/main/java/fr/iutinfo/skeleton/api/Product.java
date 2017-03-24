@@ -11,7 +11,7 @@ import fr.iutinfo.skeleton.common.dto.ProductDto;
 
 public class Product implements Principal {
     final static Logger logger = LoggerFactory.getLogger(User.class);
-    private static Product anonymous = new Product(-1, "Anonymous", "anonym",-1);
+    private static Product anonymous = new Product(-1, "Anonymous",-1);
     
     private int id = 0;
     private String name;

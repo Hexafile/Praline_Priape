@@ -17,7 +17,7 @@ public class Product implements Principal {
     private int baseprice;
     private int promotionalamount;
     private int amount;
-	private boolean available =true;
+	private boolean available;
     private String imageurl;
     
     public Product() {}

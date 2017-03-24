@@ -8,7 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="all.js"></script>
-	<link rel="stylesheet" href="layout/stylesheet.css">
+	<link rel="stylesheet" href="styles/styles.css">
     
 </head>
 
@@ -16,32 +16,31 @@
 	<!-- Barre de Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
-			<div class="navbar-header"> <a class="navbar-brand" href="#">Praline Priape</a> </div>
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav pull-left">
 				<li><a id="accueilBtn" href="#">Accueil</a></li>
 				<li><a id="lien1Btn" href="#">Hommes</a></li>
 				<li><a id="lien2Btn" href="#">Femmes</a></li>
 				<li><a id="lien3Btn" href="#">Enfants</a></li>
 			</ul>
-            <div class="navbar-header"> <a class="navbar-brand" href="#">Praline Priape</a> </div>
-			<form class="navbar-form navbar-left">
+            
+            <div id="titre" class="navbar-header"><p>PRALINE & PRIAPE</p></div>
+			<!--<form class="navbar-form navbar">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Recherche"> </div>
 				<button type="submit" class="btn btn-default">Rechercher</button>
-			</form>
-            
+			</form>-->
 			<ul class="nav navbar-nav navbar-right">
 				<!-- Message Bienvenue-->
 				<li id="navRight"></li>
 				<!-- Bouton s'inscire-->
 				<li><a id="signupBtn" href="#"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
-				<!-- Bouton se connecter-->
+				<!-- Bouton se connecter -->
 				<li><a id="signinBtn" href="#"><span class="glyphicon glyphicon-log-in"></span> Se Connecter</a></li>
 				<!-- Bouton mon compte-->
 				<li id="monCompteBtn" role="presentation" class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     Mon Compte <span class="caret"></span>
                     </a>
-					<ul class="dropdown-menu">
+					<ul class="dropdown-menu"> 
 						<li><a href="#"> Informations</a></li>
 						<li><a href="#"> Panier</a></li>
 						<li><a href="#"> WhishList</a></li>
@@ -53,27 +52,32 @@
 		</div>
 	</nav>
 	<!-- Carrousel de photos -->
-	<div id="carousel" class="carousel slide" data-ride="carousel" style="margin-top:50px">
+	<div id="carousel" class="carousel slide" data-ride="carousel"style="margin-top:50px">
 		<!-- Bulles -->
 		<ol class="carousel-indicators">
 			<li data-target="#my_carousel" data-slide-to="0" class="active"></li>
 			<li data-target="#my_carousel" data-slide-to="1"></li>
 			<li data-target="#my_carousel" data-slide-to="2"></li>
+			<li data-target="#my_carousel" data-slide-to="3"></li>
 		</ol>
 		<!-- Slides -->
 		<div class="carousel-inner">
 			<!-- Page 1 -->
 			<div class="item active">
-				<div class="carousel-page"> <img src="img/foret.jpg" class="img-responsive" style="margin:0px auto;" /> </div>
+				<div class="carousel-page"> <img src="img/IvyPark.jpg" class="img-responsive" style="margin:0px auto;" /> </div>
 			</div>
 			<!-- Page 2 -->
 			<div class="item">
-				<div class="carousel-page"><img src="img/foret2.jpg" class="img-responsive img-rounded" style="margin:0px auto;" /></div>
+				<div class="carousel-page"><img src="img/les-plus-belles-campagnes-de-automne-hiver.jpg" class="img-responsive img-rounded" style="margin:0px auto;" /></div>
 			</div>
 			<!-- Page 3 -->
 			<div class="item">
-				<div class="carousel-page"> <img src="img/foret3.jpg" class="img-responsive img-rounded" style="margin:0px auto;max-height:100%;" /> </div>
+				<div class="carousel-page"> <img src="img/montre-homme-omega.jpg" class="img-responsive img-rounded" style="margin:0px auto;max-height:100%;" /> </div>
 				<!--<div class="carousel-caption">Page 3 de présentation</div>-->
+			</div>
+            <!-- Page 4 -->
+			<div class="item">
+				<div class="carousel-page"><img src="img/rihanna-icone-mode.jpg" class="img-responsive img-rounded" style="margin:0px auto;" /></div>
 			</div>
 		</div>
 		<!-- Contrôles -->
@@ -85,7 +89,7 @@
 		<div class="row">
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/bijou1.JPG" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -95,7 +99,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt2.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/bijou2.JPG" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -105,7 +109,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt3.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/bijou3.JPG" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -115,7 +119,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/bijou4.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -125,7 +129,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt2.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/bijou5.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -135,7 +139,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt3.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/bijou6.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -148,7 +152,7 @@
 		<div class="row">
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/chaussure1.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -158,7 +162,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt2.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/chaussure2.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -168,7 +172,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt3.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/chaussure3.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -178,7 +182,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/chaussure4.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -188,7 +192,7 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt2.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/chaussure5.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
@@ -198,7 +202,133 @@
 			</div>
 			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
-					<a href="#" class="linkProduct"> <img src="img/tshirt3.jpg" alt="..."></a>
+					<a href="#" class="linkProduct"> <img src="img/produits/chaussure6.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- NOUVELLE LIGNE -->
+		<div class="row">
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/sac1.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/sac2.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/sac3.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/sac4.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/sac5.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/sac6.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- NOUVELLE LIGNE -->
+		<div class="row">
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/robe1.JPG" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/robe2.JPG" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/robe3.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/robe4.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/robe5.jpg" alt="..."></a>
+					<div class="caption">
+						<h3>Thumbnail label</h3>
+						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+						<p><a href="#" class="btn btn-primary" role="button">Acheter</a> <a href="#" class="btn btn-default" role="button">Souhaiter</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-2">
+				<div class="thumbnail">
+					<a href="#" class="linkProduct"> <img src="img/produits/robe6.jpg" alt="..."></a>
 					<div class="caption">
 						<h3>Thumbnail label</h3>
 						<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>

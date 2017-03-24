@@ -22,7 +22,9 @@
     margin-left: 25%;
 }
 
-
+.form-control{
+    margin-bottom: 10px !important;
+}
 
 #titre>p{
     color: chartreuse !important;
@@ -47,7 +49,8 @@
     margin-bottom: 10px;
 }
 
-.retourBtn{
+.retourBtn, .commanderBtn{
+    margin-left: 10px;
     float: right;
 }
 
@@ -55,5 +58,25 @@
     background-color: #8FCF3C;
 }
 
+.labelPanierProduct{
+    text-align: center;
+    float: inherit;
+    vertical-align: top;
+}
 
+#panierContainer .thumbnail{
+    display: inline-block !important;
+    border: 0px !important;
+}
+.list-group-item{
+    border-radius: 5px 5px 5px 5px !important;
+    margin-top: 5px !important;
+}
+.list-group-item, .list-group-item>.thumbnail{
+    background-color: white !important;
+}
+
+.list-group-item:hover{
+    border: 1px black solid;
+}
 

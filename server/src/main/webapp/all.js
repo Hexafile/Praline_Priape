@@ -54,6 +54,11 @@ function getSecure(url) {
 	}
 }
 
+/*
+ * Les deux fonctions suivantes permettent d'ajouter un produit à la base
+ * /!\ A vérifier !!!!
+ */
+
 function postProductBdd(name, quantite, description, prix, promotion){
     postProductGeneric(name, quantite, description, prix, promotion, "v1/product/");
 }
@@ -69,8 +74,8 @@ function postProductGeneric(name, quantite, description, prix, promotion, url) {
             "name": name
             , "amount": quantite
             , "description": description
-            , "basePrice": prix
-            , "PromotionnalAmount": promotion
+            , "baseprice": prix
+            , "promotionalamount": promotion
             , "id": 0
         })
         , success: function (data, textStatus, jqXHR) {
@@ -204,4 +209,4 @@ function tailleCarousel() {
 		img[i].style.width = width;
 		img[i].style.height = height;
 	}
-}
+} 

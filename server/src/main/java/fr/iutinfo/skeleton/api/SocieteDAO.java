@@ -19,6 +19,9 @@ public interface SocieteDAO {
 	@GetGeneratedKeys
 	int insert(@BindBean() Societe societe);
 	
+	@SqlUpdate("update societes set nom=:nom,numSiret=:numSiret,adresse=:adresse, tel=:tel, mail=:mail, methodeLivraison=:methodeLivraison, livreur=:livreur where id = :id")
+    void update(@BindBean() Societe societe);
+	
 	@SqlQuery("select * from  societes where sno = :sno")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Societe findBySno(@Bind("sno") int sno);

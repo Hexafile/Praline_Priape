@@ -82,7 +82,9 @@ function postProductGeneric(name, quantite, description, prix, promotion, url) {
             console.log("success");
         }
         , error: function (jqXHR, textStatus, errorThrown) {
-            console.log('postProduct error: ' + textStatus);
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
         }
     });
 }

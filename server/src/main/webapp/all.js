@@ -49,15 +49,11 @@ function getSecure(url) {
 	}
 }
 
-function postProductBdd(name, vendeur, quantite, description, prix, promotion, image, url) {
-	postProductGeneric(name, vendeur, quantite, description, prix, promotion, image, "v1/product/");
+function postProductBdd(name, quantite, description, prix, promotion, url){
+    postProductGeneric(name, quantite, description, prix, promotion, "v1/product/");
 }
 
-function postProductBdd(name, vendeur, quantite, description, prix, promotion, image, url){
-    postProductGeneric(name, vendeur, quantite, description, prix, promotion, image, "v1/product/");
-}
-
-function postProductGeneric(name, vendeur, quantite, description, prix, promotion, image) {
+function postProductGeneric(name, vendeur, quantite, description, prix, promotion) {
     console.log("postProductGeneric " + url)
     $.ajax({
         type: 'POST',
@@ -70,14 +66,13 @@ function postProductGeneric(name, vendeur, quantite, description, prix, promotio
             "description": description,
             "basePrice": prix,
             "PromotionnalAmount": promotion,
-            "imageURL": image,
             "id": 0
         }),
         success: function (data, textStatus, jqXHR) {
-            afficheUser(data);
+            console.log("success")
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('postUser error: ' + textStatus);
+            console.log('postProduct error: ' + textStatus);
         }
     });
 }

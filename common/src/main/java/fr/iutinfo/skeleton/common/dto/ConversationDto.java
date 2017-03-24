@@ -7,10 +7,19 @@ import org.slf4j.LoggerFactory;
 
 public class ConversationDto implements Principal {
     final static Logger logger = LoggerFactory.getLogger(UserDto.class);
+    private int id;
 	private int demandeurId;
 	private int conseilleId;
 	private boolean termine;
 	private int note;
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id=id;
+	}
 
 	public int getDemandeurId() {
 		return demandeurId;

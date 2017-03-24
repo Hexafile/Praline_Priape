@@ -3,6 +3,7 @@ package fr.iutinfo.skeleton.api;
 import java.util.List;
 
 import org.skife.jdbi.v2.sqlobject.Bind;
+import org.skife.jdbi.v2.sqlobject.BindBean;
 import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
@@ -16,7 +17,7 @@ public interface ConversationDAO {
 	
 	@SqlUpdate("insert into conversations(demandeurId, conseilleId, termine, note) values(:demandeurId, :conseilleId, :termine, :note)")
 	@GetGeneratedKeys
-	int insert();
+	int insert(@BindBean Conversation conversation);
 	
 	@SqlQuery("select * from conversations where id = :id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
@@ -28,7 +29,7 @@ public interface ConversationDAO {
 	
 	@SqlQuery("select * from conversations order by id")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	List<Product> all();
+	List<Conversation> all();
 	
 	@SqlUpdate("drop table if exists conversations")
 	void dropConversationTable();

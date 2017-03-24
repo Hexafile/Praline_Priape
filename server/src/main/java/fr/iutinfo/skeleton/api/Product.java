@@ -55,19 +55,19 @@ public class Product implements Principal {
 		this.description = description;
 	}
 
-	public int getBasePrice() {
+	public int getBaseprice() {
 		return baseprice;
 	}
 
-	public void setBasePrice(int basePrice) {
+	public void setBaseprice(int basePrice) {
 		this.baseprice = basePrice;
 	}
 
-	public int getPromotionalAmount() {
+	public int getPromotionalamount() {
 		return promotionalamount;
 	}
 
-	public void setPromotionalAmount(int promotionalAmount) {
+	public void setPromotionalamount(int promotionalAmount) {
 		this.promotionalamount = promotionalAmount;
 	}
 
@@ -79,7 +79,7 @@ public class Product implements Principal {
 		this.amount = amount;
 	}
 
-	public boolean isAvailable() {
+	public boolean getAvailable() {
 		return available;
 	}
 
@@ -87,11 +87,11 @@ public class Product implements Principal {
 		this.available = available;
 	}
 
-	public String getImageURL() {
+	public String getImageurl() {
 		return imageurl;
 	}
 
-	public void setImageURL(String imageURL) {
+	public void setImageurl(String imageURL) {
 		this.imageurl = imageURL;
 	}
 
@@ -99,8 +99,8 @@ public class Product implements Principal {
 		return name;
 	}
 	
-	public void addDealer(String d){
-		
+	public void setName(String name){
+		this.name=name;
 	}
 
 	public void initFromDto(ProductDto dto) {

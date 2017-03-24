@@ -17,16 +17,14 @@ import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ProductResource {
-	
 	final static Logger logger=LoggerFactory.getLogger(ProductResource.class);
-	
 	private static ProductDAO dao=getDbi().open(ProductDAO.class);
 	
 	public ProductResource() throws SQLException {
 		if(!tableExist("products")) {
 			logger.debug("Create table products");
 			dao.createProductTable();
-			dao.insert(new Product(0, "nom0", 0));
+			dao.insert(new Product(0, "nom0", 2));
 		}
 	}
 	

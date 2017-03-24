@@ -12,7 +12,7 @@ public interface ProductDAO {
 	
 	@SqlUpdate("insert into products (name, description, baseprice, promotionalamount, amount, available, imageurl) values (:name, :description, :baseprice, :promotionalamount, :amount, :available, :imageurl)")
 	@GetGeneratedKeys
-	int insert(@BindBean() Product product);
+	int insert(@BindBean() Product p);
 	
 	@SqlQuery("select * from products where id = :id")
 	@RegisterMapperFactory(BeanMapperFactory.class)

@@ -130,6 +130,28 @@ function listUsersGeneric(url) {
 	});
 }
 
+function listProductsBdd() {
+	listProductsGeneric("v1/product/");
+}
+
+function listProductsGeneric(url) {
+	$.getJSON(url, function(datat) {
+		afficheListProducts(data)
+	});
+}
+
+function afficheListProducts(data) {
+	console.log(data);
+	var ligne;
+	for(var i=0; i<data.length; i++) {
+		if(i%6==0) ligne=$("<div class=\"row\"></div>");
+		var divProduct=$("<div class=\"col-sm-6 col-md-2\"></div>");
+		var thumbnail=$("<div class=\"thumbnail\"></div>");
+		thumbnail.append
+	} 
+	
+}
+
 function afficheUser(data) {
 	console.log(data);
 	$("#reponse").html(data.id + " : <b>" + data.alias + "</b> (" + data.name + ")");
@@ -192,14 +214,7 @@ function deconnection() {
 	loadPage();
 }
 
-function cleanPage() {
-	$("#mainContainer").hide();
-	$("#inscriptionContainer").hide();
-	$("#connectionContainer").hide();
-	$("#addProductContainer").hide();
-	$("#descriptionContainer").hide();
-	$("#carousel").hide();
-}
+
 
 function tailleCarousel() {
 	var height = document.body.clientHeight - 50;
@@ -211,4 +226,24 @@ function tailleCarousel() {
 		img[i].style.width = width;
 		img[i].style.height = height;
 	}
-} 
+}	
+function cleanPage() {
+	$("#mainContainer").hide();
+	$("#inscriptionContainer").hide();
+	$("#connectionContainer").hide();
+	$("#addProductContainer").hide();
+	$("#descriptionContainer").hide();
+	$("#carousel").hide();
+	$("#panierContainer").hide();
+	$("#whishlistContainer").hide();
+}
+
+function panierShow(){
+	cleanPage();
+	$("#panierContainer").show();
+}
+
+function whishlistShow(){
+    cleanPage();
+    $("#whishlistContainer").show();
+}

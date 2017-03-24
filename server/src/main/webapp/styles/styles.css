@@ -1,9 +1,9 @@
-.thumbnail:hover {
+.col-sm-6>.thumbnail:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     text-decoration: none;
 }
 
-.thumbnail a {
+.mainContainer .thumbnail a {
     text-align: center;
     text-decoration: none;
 }
@@ -19,7 +19,7 @@
 }
 
 #titre{
-    margin-left: 25%;
+    margin-left: 20%;
 }
 
 #titre>p{
@@ -28,3 +28,30 @@
     font-size: 150%;
     font-family: 'Arial' !important;
 }
+.descripTitle{
+    margin-bottom: 50px !important;
+}
+
+.col-md-6>.thumbnail>p{
+    float: right;
+    margin-top: 25px;
+}
+
+.caractTitle{
+    margin-left: 25px;   
+    margin-bottom: 25px;   
+}
+.caract{
+    margin-bottom: 10px;
+}
+
+.retourBtn{
+    float: right;
+}
+
+.retourBtn>a{
+    background-color: #8FCF3C;
+}
+
+
+

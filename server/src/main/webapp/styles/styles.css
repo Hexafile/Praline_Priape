@@ -58,13 +58,12 @@
     background-color: #8FCF3C;
 }
 
-.labelPanierProduct{
-    text-align: center;
-    float: inherit;
-    vertical-align: top;
-}
 
 #panierContainer .thumbnail{
+    display: inline-block !important;
+    border: 0px !important;
+}
+#whishlistContainer .thumbnail{
     display: inline-block !important;
     border: 0px !important;
 }
@@ -79,4 +78,3 @@
 .list-group-item:hover{
     border: 1px black solid;
 }
-

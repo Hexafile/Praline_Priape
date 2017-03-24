@@ -8,6 +8,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static fr.iutinfo.skeleton.api.BDDFactory.getDbi;
 import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
@@ -48,8 +49,8 @@ public class ProductResource {
 	}
 	
 	@GET
-	public List<Product> getAllProducts() {
-		return dao.all();
+	public List<ProductDto> getAllProducts() {
+		return dao.all().stream().map(Product::convertToDto).collect(Collectors.toList());
 	}
 	
 	@DELETE

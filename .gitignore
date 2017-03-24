@@ -29,6 +29,7 @@ bin/
 gen/
 out/
 .metadata/
+.recommenders/
 
 # Gradle files
 .gradle/

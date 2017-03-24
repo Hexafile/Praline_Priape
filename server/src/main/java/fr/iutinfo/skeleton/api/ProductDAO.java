@@ -22,7 +22,7 @@ public interface ProductDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Product findByName(@Bind("name") String name);
 	
-	@SqlUpdate("update products set name=:name,description=:description,baseprice=:basePrice, promotionalamount=:promotionalAmount, available=:available, imageUrl=:imageUrl where id = :id")
+	@SqlUpdate("update products set name=:name,description=:description,baseprice=:baseprice, promotionalamount=:promotionalamount, available=:available, imageurl=:imageurl where id = :id")
     void update(@BindBean() Product product);
 	
 	@SqlQuery("select * from products order by id")

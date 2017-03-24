@@ -130,6 +130,21 @@ function listUsersGeneric(url) {
 	});
 }
 
+function listProductsBdd() {
+	listProductsGeneric("v1/product/");
+}
+
+function listProductsGeneric(url) {
+	$.getJSON(url, function(datat) {
+		afficheListProducts(data)
+	});
+}
+
+function afficheListProducts(data) {
+	console.log(data);
+	
+}
+
 function afficheUser(data) {
 	console.log(data);
 	$("#reponse").html(data.id + " : <b>" + data.alias + "</b> (" + data.name + ")");
@@ -211,4 +226,19 @@ function tailleCarousel() {
 		img[i].style.width = width;
 		img[i].style.height = height;
 	}
+	
+function cleanPage() {
+	$("#mainContainer").hide();
+	$("#inscriptionContainer").hide();
+	$("#connectionContainer").hide();
+	$("#addProductContainer").hide();
+	$("#descriptionContainer").hide();
+	$("#carousel").hide();
+	$("#panierContainer").hide();
+}
+
+function panierShow(){
+	cleanPage();
+	$("#panierContainer").show();
+}
 } 

@@ -142,9 +142,14 @@ function listProductsGeneric(url) {
 
 function afficheListProducts(data) {
 	console.log(data);
-	var nbProduits=data.length;
-	var nbLignes=nbProduits/6;
-	if(nbProduits%6==0) nbLignes++;
+	var ligne;
+	for(var i=0; i<data.length; i++) {
+		if(i%6==0) ligne=$("<div class=\"row\"></div>");
+		var divProduct=$("<div class=\"col-sm-6 col-md-2\"></div>");
+		var thumbnail=$("<div class=\"thumbnail\"></div>");
+		thumbnail.append
+	} 
+	
 }
 
 function afficheUser(data) {
@@ -230,9 +235,15 @@ function cleanPage() {
 	$("#descriptionContainer").hide();
 	$("#carousel").hide();
 	$("#panierContainer").hide();
+	$("#whishlistContainer").hide();
 }
 
 function panierShow(){
 	cleanPage();
 	$("#panierContainer").show();
+}
+
+function whishlistShow(){
+    cleanPage();
+    $("#whishlistContainer").show();
 }

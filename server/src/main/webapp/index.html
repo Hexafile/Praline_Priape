@@ -8,7 +8,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="all.js"></script>
-	<link rel="stylesheet" href="layout/stylesheet.css"> </head>
+	<link rel="stylesheet" href="layout/stylesheet.css">
+    
+</head>
 
 <body>
 	<!-- Barre de Navigation -->
@@ -21,11 +23,13 @@
 				<li><a id="lien2Btn" href="#">Femmes</a></li>
 				<li><a id="lien3Btn" href="#">Enfants</a></li>
 			</ul>
+            <div class="navbar-header"> <a class="navbar-brand" href="#">Praline Priape</a> </div>
 			<form class="navbar-form navbar-left">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Recherche"> </div>
 				<button type="submit" class="btn btn-default">Rechercher</button>
 			</form>
+            
 			<ul class="nav navbar-nav navbar-right">
 				<!-- Message Bienvenue-->
 				<li id="navRight"></li>
@@ -243,14 +247,12 @@
 					<h1>Ajouter un produit</h1>
 					<!-- Formulaire -->
 					<input type="text" name="nameproduct" id="nameproduct" placeholder="Nom de l'objet" class="form-control" />
-					<input type="text" name="dealer" id="dealer" placeholder="Vendeur" class="form-control" />
 					<input type="text" name="quantity" id="quantity" placeholder="Quantité" class="form-control" />
 					<input type="text" name="description" id="description" placeholder="Decription" class="form-control" />
 					<input type="text" name="baseprice" id="baseprice" placeholder="Prix" class="form-control" />
 					<input type="text" name="promotionalamount" id="promotionalamount" placeholder="Promotion" class="form-control" />
-					<input type="text" name="imgurl" id="imgurl" placeholder="Image" class="form-control" /> </div>
 				<div class="btn-group" role="group">
-					<button type="button" id="post-bdd" class="btn btn-primary">Enregistrer</button>
+					<button type="button" id="post-product-bdd" class="btn btn-primary">Enregistrer</button>
 				</div>
 			</div>
 		</div>
@@ -276,6 +278,10 @@
 		});
 		$("#post-bdd").click(function () {
 			postUserBdd($('#userdb').val(), $('#aliasdb').val(), $('#emaildb').val(), $('#passwddb').val())
+				, loadPage();
+		});
+		$("#post-product-bdd").click(function () {
+			postProductBdd($('#nameproduct').val(), $('#quantity').val(), $('#description').val(), $('#baseprice').val(), $('#promotionalamount').val())
 				, loadPage();
 		});
 		$("#connection").click(function () {

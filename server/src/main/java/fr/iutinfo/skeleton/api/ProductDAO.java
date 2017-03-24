@@ -7,10 +7,10 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface ProductDAO {
-	@SqlUpdate("create table products (id integer primary key autoincrement, name varchar(50) not null, description varchar(140), baseprice int, promotionalamount int, available boolean, imageurl varchar(100))")
+	@SqlUpdate("create table products (id integer primary key autoincrement, name varchar(50) not null, description varchar(140), baseprice int, promotionalamount int, amount int, available boolean, imageurl varchar(100))")
 	void createProductTable();
 	
-	@SqlUpdate("insert into products (name, description, baseprice, promotionalamount, available, imageurl) values(:name, :description, :baseprice, :promotionalamount, :available, :imageurl)")
+	@SqlUpdate("insert into products (name, description, baseprice, promotionalamount, amount, available, imageurl) values(:name, :description, :baseprice, :promotionalamount, :amount, :available, :imageurl)")
 	@GetGeneratedKeys
 	int insert(@BindBean() Product product);
 	
@@ -22,7 +22,7 @@ public interface ProductDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Product findByName(@Bind("name") String name);
 	
-	@SqlUpdate("update products set name=:name,description=:description,baseprice=:baseprice, promotionalamount=:promotionalamount, available=:available, imageurl=:imageurl where id = :id")
+	@SqlUpdate("update products set name=:name,description=:description,baseprice=:baseprice, promotionalamount=:promotionalamount, amount=:amount, available=:available, imageurl=:imageurl where id = :id")
     void update(@BindBean() Product product);
 	
 	@SqlQuery("select * from products order by id")

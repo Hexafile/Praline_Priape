@@ -144,7 +144,7 @@ public class Product implements Principal {
 		this.basePrice=dto.getBasePrice();
 		this.promotionalAmount=dto.getPromotionalAmount();
 		this.amount=dto.getAmount();
-		this.available = dto.isAvailable();
+		this.available = dto.getAvailable();
 	    this.imageURL= dto.getImageURL();
 	}
 	

@@ -67,7 +67,7 @@ public class ProductDto implements Principal {
 		this.amount = amount;
 	}
 
-	public boolean isAvailable() {
+	public boolean getAvailable() {
 		return available;
 	}
 

@@ -16,6 +16,11 @@ function getByAnnotation() {
 	getSecure("v1/secure/byannotation");
 }
 
+/*
+ * Cette fonction permet de vérifier si un utilisateur existe dans la base
+ * si oui, le login et le mot de passe sont stockés
+ */
+
 function getSecure(url) {
 	if ($("#userlogin").val() != "") {
 		$.ajax({
@@ -49,33 +54,37 @@ function getSecure(url) {
 	}
 }
 
-function postProductBdd(name, quantite, description, prix, promotion, url){
+function postProductBdd(name, quantite, description, prix, promotion){
     postProductGeneric(name, quantite, description, prix, promotion, "v1/product/");
 }
 
-function postProductGeneric(name, vendeur, quantite, description, prix, promotion) {
+function postProductGeneric(name, quantite, description, prix, promotion, url) {
     console.log("postProductGeneric " + url)
     $.ajax({
-        type: 'POST',
-        contentType: 'application/json',
-        url: url,
-        dataType: "json",
-        data: JSON.stringify({
-            "name": name,
-            "amount": quantite,
-            "description": description,
-            "basePrice": prix,
-            "PromotionnalAmount": promotion,
-            "id": 0
-        }),
-        success: function (data, textStatus, jqXHR) {
-            console.log("success")
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
+        type: 'POST'
+        , contentType: 'application/json'
+        , url: url
+        , dataType: "json"
+        , data: JSON.stringify({
+            "name": name
+            , "amount": quantite
+            , "description": description
+            , "basePrice": prix
+            , "PromotionnalAmount": promotion
+            , "id": 0
+        })
+        , success: function (data, textStatus, jqXHR) {
+            console.log("success");
+        }
+        , error: function (jqXHR, textStatus, errorThrown) {
             console.log('postProduct error: ' + textStatus);
         }
     });
 }
+
+/*
+ * Les deux fonctions suivantes permettent d'ajouter un utilisateur à la base
+ */
 
 function postUserBdd(name, alias, email, pwd) {
 	postUserGeneric(name, alias, email, pwd, "v1/user/");

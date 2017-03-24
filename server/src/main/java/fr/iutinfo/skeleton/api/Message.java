@@ -10,6 +10,14 @@ public class Message implements Principal {
 	private java.util.Date date;
 	String msg;
 	
+	public Message(int i,String string) {
+		idWriter=i;
+		date=new java.util.Date();
+		msg=string;
+	}
+	
+	public Message() {}
+
 	public int getIdConv() {
 		return idConv;
 	}

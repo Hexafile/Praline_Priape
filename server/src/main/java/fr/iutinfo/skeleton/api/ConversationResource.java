@@ -20,12 +20,13 @@ public class ConversationResource {
 	
 	final static Logger logger=LoggerFactory.getLogger(ConversationResource.class);
 	
-	private static ConversationDAO dao=getDbi().open(ConversationDAO.class);
+	private static ConversationDao dao=getDbi().open(ConversationDao.class);
 	
 	public ConversationResource() throws SQLException {
 		if(!tableExist("conversation")) {
 			logger.debug("Create table conversations");
 			dao.createConversationTable();
+			dao.insert(new Conversation(0,0));
 		}
 	}
 	

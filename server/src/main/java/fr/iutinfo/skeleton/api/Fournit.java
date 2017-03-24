@@ -1,6 +1,10 @@
 package fr.iutinfo.skeleton.api;
 
-public class Fournit {
+import java.security.Principal;
+
+import fr.iutinfo.skeleton.common.dto.FournitDto;
+
+public class Fournit implements Principal{
 	private int pno;
 	private int sno;
 	
@@ -15,5 +19,21 @@ public class Fournit {
 	}
 	public void setSno(int sno) {
 		this.sno = sno;
+	}
+	@Override
+	public String getName() {
+		return sno+"Fournit"+pno;
+	}
+	
+	public void initFromDto(FournitDto dto){
+		this.setPno(dto.getPno());
+		this.setSno(dto.getSno());
+	}
+	
+	public FournitDto convertToDto(){
+		FournitDto dto = new FournitDto();
+		dto.setPno(getPno());
+		dto.setSno(getSno());
+		return dto;
 	}
 }

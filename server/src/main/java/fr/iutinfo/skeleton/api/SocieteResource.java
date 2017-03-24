@@ -20,7 +20,7 @@ import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 public class SocieteResource {
 	
 	final static Logger logger=LoggerFactory.getLogger(SocieteResource.class);
-	private static SocieteDAO dao=getDbi().open(SocieteDAO.class);
+	private static SocieteDao dao=getDbi().open(SocieteDao.class);
 	
 	public SocieteResource() throws SQLException {
 		if(!tableExist("societes")) {

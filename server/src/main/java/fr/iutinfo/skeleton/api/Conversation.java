@@ -15,6 +15,14 @@ public class Conversation implements Principal {
 	private boolean termine;
 	private int note;
 	
+	public Conversation(int demandeurId,int conseilleId){
+		this.demandeurId=demandeurId;
+		this.conseilleId=conseilleId;
+		termine = false;
+	}
+	
+	public Conversation(){}
+	
 	public int getId() {
 		return id;
 	}

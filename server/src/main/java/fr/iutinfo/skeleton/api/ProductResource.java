@@ -18,7 +18,7 @@ import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ProductResource {
 	final static Logger logger=LoggerFactory.getLogger(ProductResource.class);
-	private static ProductDAO dao=getDbi().open(ProductDAO.class);
+	private static ProductDao dao=getDbi().open(ProductDao.class);
 	
 	public ProductResource() throws SQLException {
 		if(!tableExist("products")) {

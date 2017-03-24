@@ -8,8 +8,8 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface FournitDao {
 	
-	@SqlUpdate("create table fournit (idproduct integer primary key, idsociete integer primary key, constraint fkidp foreign key(idproduct) references products(id) on delete cascade, constraint fksno foreign key(idsociete) references societe(id) on delete cascade)")
-	void createProductTable();
+	@SqlUpdate("create table fournit (idproduct integer primary key not null, idsociete integer primary key not null, constraint fkidp foreign key(idproduct) references products(id) on delete cascade, constraint fksno foreign key(idsociete) references societe(id) on delete cascade)")
+	void createFournitTable();
 	
 	@SqlUpdate("insert into fournit values(:pno,:sno)")
 	@GetGeneratedKeys
@@ -19,7 +19,7 @@ public interface FournitDao {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Fournit> findByProduct(@Bind("sno") int sno);
 	
-	@SqlQuery("select * from products where idproduct = :pno")
+	@SqlQuery("select * from fournit where idproduct = :pno")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Fournit> findBySociete(@Bind("pno") int pno);
 	
@@ -28,7 +28,7 @@ public interface FournitDao {
 	List<Fournit> all();
 	
 	@SqlUpdate("drop table if exists fournit")
-	void dropProductTable();
+	void dropFournitTable();
 	
 	@SqlUpdate("delete from fournit where idproduct = :pno")
 	void deleteByProduct(@Bind int pno);

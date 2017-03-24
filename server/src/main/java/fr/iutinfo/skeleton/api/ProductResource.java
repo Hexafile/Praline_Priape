@@ -25,7 +25,7 @@ public class ProductResource {
 		if(!tableExist("products")) {
 			logger.debug("Create table products");
 			dao.createProductTable();
-			dao.insert(new Product(0, "nom0", "dealer0", 1, "description0"));
+			dao.insert(new Product(0, "nom0", 1, "description0"));
 		}
 	}
 	

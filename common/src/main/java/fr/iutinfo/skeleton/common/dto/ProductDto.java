@@ -1,7 +1,6 @@
 package fr.iutinfo.skeleton.common.dto;
 
 import java.security.Principal;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +11,11 @@ public class ProductDto implements Principal {
 	private String name;
 	private int id;
     private String description;
-    private int basePrice;
-    private int promotionalAmount;
+    private int baseprice;
+    private int promotionalamount;
     private int amount;
 	private boolean available;
-    private String imageURL;
+    private String imageurl;
 
 	public int getId() {
 		return id;
@@ -35,19 +34,19 @@ public class ProductDto implements Principal {
 	}
 
 	public int getBasePrice() {
-		return basePrice;
+		return baseprice;
 	}
 
 	public void setBasePrice(int basePrice) {
-		this.basePrice = basePrice;
+		this.baseprice = basePrice;
 	}
 
 	public int getPromotionalAmount() {
-		return promotionalAmount;
+		return promotionalamount;
 	}
 
 	public void setPromotionalAmount(int promotionalAmount) {
-		this.promotionalAmount = promotionalAmount;
+		this.promotionalamount = promotionalAmount;
 	}
 
 	public int getAmount() {
@@ -67,11 +66,11 @@ public class ProductDto implements Principal {
 	}
 
 	public String getImageURL() {
-		return imageURL;
+		return imageurl;
 	}
 
 	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+		this.imageurl = imageURL;
 	}
 
 	public String getName() {

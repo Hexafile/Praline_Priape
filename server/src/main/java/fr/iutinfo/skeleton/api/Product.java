@@ -1,8 +1,6 @@
 package fr.iutinfo.skeleton.api;
 
-import java.util.List;
 import java.security.Principal;
-import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,24 +14,24 @@ public class Product implements Principal {
     private int id = 0;
     private String name;
  	private String description;
-    private int basePrice;
-    private int promotionalAmount;
+    private int baseprice;
+    private int promotionalamount;
     private int amount;
 	private boolean available =true;
-    private String imageURL;
+    private String imageurl;
     
     public Product() {}
     
     public Product(int id,String name,int basePrice) {
 		this.id = id;
 		this.name = name;
-		this.basePrice=basePrice;
+		this.baseprice=basePrice;
 	}
     
     public Product(int id,String name,int basePrice,String description) {
 		this.id = id;
 		this.name = name;
-		this.basePrice=basePrice;
+		this.baseprice=basePrice;
 		this.description=description;
 	}
     
@@ -58,19 +56,19 @@ public class Product implements Principal {
 	}
 
 	public int getBasePrice() {
-		return basePrice;
+		return baseprice;
 	}
 
 	public void setBasePrice(int basePrice) {
-		this.basePrice = basePrice;
+		this.baseprice = basePrice;
 	}
 
 	public int getPromotionalAmount() {
-		return promotionalAmount;
+		return promotionalamount;
 	}
 
 	public void setPromotionalAmount(int promotionalAmount) {
-		this.promotionalAmount = promotionalAmount;
+		this.promotionalamount = promotionalAmount;
 	}
 
 	public int getAmount() {
@@ -90,11 +88,11 @@ public class Product implements Principal {
 	}
 
 	public String getImageURL() {
-		return imageURL;
+		return imageurl;
 	}
 
 	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+		this.imageurl = imageURL;
 	}
 
 	public String getName() {
@@ -109,11 +107,11 @@ public class Product implements Principal {
 		this.name=dto.getName();
 		this.id=dto.getId();
 		this.description=dto.getDescription();
-		this.basePrice=dto.getBasePrice();
-		this.promotionalAmount=dto.getPromotionalAmount();
+		this.baseprice=dto.getBasePrice();
+		this.promotionalamount=dto.getPromotionalAmount();
 		this.amount=dto.getAmount();
 		this.available = dto.getAvailable();
-	    this.imageURL= dto.getImageURL();
+	    this.imageurl= dto.getImageURL();
 	}
 	
 	public ProductDto convertToDto() {
@@ -121,11 +119,11 @@ public class Product implements Principal {
 		dto.setName(name);
 		dto.setId(id);
 	    dto.setDescription(description);
-	    dto.setBasePrice(basePrice);
-	    dto.setPromotionalAmount(promotionalAmount);
+	    dto.setBasePrice(baseprice);
+	    dto.setPromotionalAmount(promotionalamount);
 	    dto.setAmount(amount);
 		dto.setAvailable(available);
-	    dto.setImageURL(imageURL);
+	    dto.setImageURL(imageurl);
 		return dto;
 	}
 }

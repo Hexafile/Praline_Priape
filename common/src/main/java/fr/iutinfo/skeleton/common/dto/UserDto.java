@@ -28,7 +28,7 @@ public class UserDto implements Principal {
 	}
 
 	public void setDateInscription(java.util.Date dateInscription) {
-		this.dateInscription = new java.sql.Date(dateInscription.getTime());;
+		this.dateInscription = new java.sql.Date(dateInscription.getTime());
 	}
 
 	public String getSociete() {

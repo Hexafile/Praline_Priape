@@ -28,8 +28,8 @@ public class MessageDto implements Principal{
 		return date;
 	}
 
-	public void setDate(java.sql.Date date) {
-		this.date = date;
+	public void setDate(java.util.Date date) {
+		this.date = new java.sql.Date(date.getTime());
 	}
 
 	public String getMsg() {

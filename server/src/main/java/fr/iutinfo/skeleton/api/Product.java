@@ -46,6 +46,14 @@ public class Product implements Principal {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name=name;
+	}
 
 	public String getDescription() {
 		return description;
@@ -93,14 +101,6 @@ public class Product implements Principal {
 
 	public void setImageurl(String imageURL) {
 		this.imageurl = imageURL;
-	}
-
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name){
-		this.name=name;
 	}
 
 	public void initFromDto(ProductDto dto) {

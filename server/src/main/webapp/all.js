@@ -132,6 +132,7 @@ function postProductGeneric(name, quantite, description, prix, promotion, url) {
         })
         , success: function (data, textStatus, jqXHR) {
             console.log("success");
+            listProductsBdd();
         }
         , error: function (jqXHR, textStatus, errorThrown) {
             console.log(jqXHR);

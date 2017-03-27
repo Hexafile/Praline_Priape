@@ -21,7 +21,7 @@
 				<li><a id="lien1Btn" href="#">Ajout Produit</a></li>
 				<li><a id="lien2Btn" href="#">Contact</a></li>
                 <li><a href="https://fr-fr.facebook.com/" target="_blank"><img class="logo" src="img/logo-facebook.png"></a></li>
-				<li><a href="https://twitter.com/?lang=fr" target="_blank"><img class="logo" src="img/Twitter_Bird.svg.png"></a></li>
+				<li><a href="https://twitter.com/?lang=fr" target="_blank"><img class="logo" src="img/Twitter_Bird.png"></a></li>
 			</ul>
             
             <div id="titre" class="navbar-header"><p>PRALINE & PRIAPE</p></div>
@@ -389,12 +389,12 @@
 			loadPage()
 		});
 		$("#post-bdd").click(function () {
-			postUserBdd($('#userdb').val(), $('#aliasdb').val(), $('#emaildb').val(), $('#passwddb').val())
-				, loadPage();
+			postUserBdd($('#userdb').val(), $('#aliasdb').val(), $('#emaildb').val(), $('#passwddb').val());
+            loadPage();
 		});
 		$("#post-product-bdd").click(function () {
-			postProductBdd($('#nameproduct').val(), $('#quantity').val(), $('#description').val(), $('#baseprice').val(), $('#promotionalamount').val())
-				, loadPage();
+			postProductBdd($('#nameproduct').val(), $('#quantity').val(), $('#description').val(), $('#baseprice').val(), $('#promotionalamount').val());
+            loadPage();
 		});
 		$("#connection").click(function () {
 			getSecure("v1/secure/who");

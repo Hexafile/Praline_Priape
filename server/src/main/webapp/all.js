@@ -198,26 +198,6 @@ function loadPage() {
 	$("#carousel").show();
 }
 
-function signUp() {
-	cleanPage();
-	$("#inscriptionContainer").show();
-}
-
-function signIn() {
-	cleanPage();
-	$("#connectionContainer").show();
-}
-
-function description() {
-	cleanPage();
-	$("#descriptionContainer").show();
-}
-
-function ajoutProduct() {
-	cleanPage();
-	$("#addProductContainer").show();
-}
-
 function deconnection() {
 	sessionStorage.setItem("login", null);
 	sessionStorage.setItem("password", null);
@@ -240,14 +220,9 @@ function tailleCarousel() {
 }	
 function cleanPage() {
 	$("#mainContainer").hide();
-	$("#inscriptionContainer").hide();
-	$("#connectionContainer").hide();
-	$("#addProductContainer").hide();
-	$("#descriptionContainer").hide();
 	$("#carousel").hide();
 	$("#panierContainer").hide();
 	$("#whishlistContainer").hide();
-	$("#contactContainer").hide();
 }
 
 function panierShow(){
@@ -258,11 +233,6 @@ function panierShow(){
 function whishlistShow(){
     cleanPage();
     $("#whishlistContainer").show();
-}
-
-function contactShow(){
-	cleanPage();
-	$("#contactContainer").show();
 }
 
 //Ajout d'un item au panier, ajouter un champs hidden dans le html, pour chaque produit

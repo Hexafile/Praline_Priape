@@ -111,11 +111,11 @@ function role(role){
  * /!\ A vérifier !!!!
  */
 
-function postProductBdd(name, quantite, description, prix, promotion){
-    postProductGeneric(name, quantite, description, prix, promotion, "v1/product/");
+function postProductBdd(name, quantite, description, prix, promotion, imagePath){
+    postProductGeneric(name, quantite, description, prix, promotion, imagePath, "v1/product/");
 }
 
-function postProductGeneric(name, quantite, description, prix, promotion, url) {
+function postProductGeneric(name, quantite, description, prix, promotion, imagePath, url) {
     console.log("postProductGeneric " + url)
     $.ajax({
         type: 'POST'
@@ -128,6 +128,7 @@ function postProductGeneric(name, quantite, description, prix, promotion, url) {
             , "description": description
             , "baseprice": prix
             , "promotionalamount": promotion
+            , "imageurl": imagePath
             , "id": 0
         })
         , success: function (data, textStatus, jqXHR) {
@@ -204,7 +205,7 @@ function afficheListProducts(data) {
 		}
 		var divProduct=$("<div class=\"col-sm-6 col-md-2\"></div>");
 		var thumbnail=$("<div class=\"thumbnail\"></div>");
-		thumbnail.append($("<a href=\"#\" class=\"linkProduct\"><img src=\"img/produits/bijou1.JPG\" alt =\"...\"></a>"));
+		thumbnail.append($("<a href=\"#\" class=\"linkProduct\"><img src=\""+data[i].imageurl+"\" alt =\"...\"></a>"));
 		var caption=$("<div class=\"caption\"></div>");
 		caption.append($("<h3>"+data[i].name+"</h3>"));
 		caption.append($("<p>"+data[i].description+"</p>"));

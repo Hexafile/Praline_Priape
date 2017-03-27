@@ -284,6 +284,7 @@
                     <input type="text" name="description" id="description" placeholder="Decription" class="form-control" />
                     <input type="text" name="baseprice" id="baseprice" placeholder="Prix" class="form-control" />
                     <input type="text" name="promotionalamount" id="promotionalamount" placeholder="Promotion" class="form-control" />
+                    <input type="text" name ="imagePath" id="imagePath" placeholder="Absolute Path image" class="form-control" /> 
                     <div class="btn-group" role="group">
                         <button type="button" id="post-product-bdd" class="btn btn-primary">Enregistrer</button>
                     </div>
@@ -393,7 +394,7 @@
             loadPage();
 		});
 		$("#post-product-bdd").click(function () {
-			postProductBdd($('#nameproduct').val(), $('#quantity').val(), $('#description').val(), $('#baseprice').val(), $('#promotionalamount').val());
+			postProductBdd($('#nameproduct').val(), $('#quantity').val(), $('#description').val(), $('#baseprice').val(), $('#promotionalamount').val(), $("#imagePath").val());
             loadPage();
 		});
 		$("#connection").click(function () {

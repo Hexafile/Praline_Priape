@@ -116,11 +116,11 @@ public class Product implements Principal {
 		this.name=dto.getName();
 		this.id=dto.getId();
 		this.description=dto.getDescription();
-		this.baseprice=dto.getBasePrice();
-		this.promotionalamount=dto.getPromotionalAmount();
+		this.baseprice=dto.getBaseprice();
+		this.promotionalamount=dto.getPromotionalamount();
 		this.amount=dto.getAmount();
 		this.available = dto.getAvailable();
-	    this.imageurl= dto.getImageURL();
+	    this.imageurl= dto.getImageurl();
 	    this.dealer= dto.getDealer();
 	}
 	
@@ -129,11 +129,11 @@ public class Product implements Principal {
 		dto.setName(name);
 		dto.setId(id);
 	    dto.setDescription(description);
-	    dto.setBasePrice(baseprice);
-	    dto.setPromotionalAmount(promotionalamount);
+	    dto.setBaseprice(baseprice);
+	    dto.setPromotionalamount(promotionalamount);
 	    dto.setAmount(amount);
 		dto.setAvailable(available);
-	    dto.setImageURL(imageurl);
+	    dto.setImageurl(imageurl);
 	    dto.setDealer(dealer);
 		return dto;
 	}

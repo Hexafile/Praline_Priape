@@ -51,19 +51,19 @@ public class ProductDto implements Principal {
 		this.description = description;
 	}
 
-	public int getBasePrice() {
+	public int getBaseprice() {
 		return baseprice;
 	}
 
-	public void setBasePrice(int basePrice) {
+	public void setBaseprice(int basePrice) {
 		this.baseprice = basePrice;
 	}
 
-	public int getPromotionalAmount() {
+	public int getPromotionalamount() {
 		return promotionalamount;
 	}
 
-	public void setPromotionalAmount(int promotionalAmount) {
+	public void setPromotionalamount(int promotionalAmount) {
 		this.promotionalamount = promotionalAmount;
 	}
 
@@ -83,11 +83,11 @@ public class ProductDto implements Principal {
 		this.available = available;
 	}
 
-	public String getImageURL() {
+	public String getImageurl() {
 		return imageurl;
 	}
 
-	public void setImageURL(String imageURL) {
+	public void setImageurl(String imageURL) {
 		this.imageurl = imageURL;
 	}
 

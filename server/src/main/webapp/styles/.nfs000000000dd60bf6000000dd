@@ -60,7 +60,7 @@
 
 
 #panierContainer .thumbnail{
-    display: inline-block !important;   
+    display: inline-block !important;
     border: 0px !important;
 }
 #whishlistContainer .thumbnail{
@@ -77,9 +77,4 @@
 
 .list-group-item:hover{
     border: 1px black solid;
-}
-
-.logo{
-    width: 25px !important;
-    height: 25px !important;
 }

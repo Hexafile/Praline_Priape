@@ -56,9 +56,34 @@ function getSecure(url) {
 	}
 }
 
-var boolean = function verifie(name){
-    if ($("login").val() != "" && $("id").val() != null && $("role").val() != null) {
+function verifie(name){
+    if (sessionStorage.getItem("login") != "" && sessionStorage.getItem("id") != null && sessionStorage.getItem("role") != null) {
         $.ajax({
+            type: "GET"
+            , url: "v1/secure/who"
+			, dataType: 'json'
+			, beforeSend: function (req) {
+				req.setRequestHeader("Authorization", "Basic " + sessionStorage.getItem("login") + ":" + sessionStorage.getItem("password"));
+			}
+			, success: function (data) {
+                if(data.id!==sessionStorage.getItem("id") || sessionStorage.getItem("login")!==data.login || sessionStorage.getItem("role")!==data.role){
+                    return false;
+                }
+                if(role(name)===3){
+                    afficheUser(data);
+                    return true;
+                }
+			}
+			, error: function (jqXHR, textStatus, errorThrown) {
+				alert('error: ' + textStatus);
+			}
+		});
+    }
+    console.log("temoin verif");
+    return false;
+}
+function role(role){
+     $.ajax({
             type: "GET"
             , url: url
 			, dataType: 'json'
@@ -66,8 +91,11 @@ var boolean = function verifie(name){
 				req.setRequestHeader("Authorization", "Basic " + $("login").val() + ":" + $("password").val());
 			}
 			, success: function (data) {
-				afficheUser(data);
-                return true;
+                if(role(name)===3){
+                    afficheUser(data);
+                    return true;
+                }
+                return false;
 			}
 			, error: function (jqXHR, textStatus, errorThrown) {
 				alert('error: ' + textStatus);
@@ -75,8 +103,8 @@ var boolean = function verifie(name){
                 return false;
 			}
 		});
-    }
 }
+
 
 /*
  * Les deux fonctions suivantes permettent d'ajouter un produit à la base
@@ -226,6 +254,8 @@ function loadPage() {
 function deconnection() {
 	sessionStorage.setItem("login", null);
 	sessionStorage.setItem("password", null);
+    sessionStorage.setItem("role", null);
+    sessionStorage.setItem("id", null);
 	$("#bienvenue").remove();
 	loadPage();
 }

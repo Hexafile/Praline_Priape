@@ -30,7 +30,7 @@ public class MessageResource {
 	
 	public MessageResource() throws SQLException {
 		if(!tableExist("msgs")) {
-			logger.debug("Create table societes");
+			logger.debug("Create table msgs");
 			dao.createConversationTable();
 			dao.insert(new Message(0,"lol"));
 		}

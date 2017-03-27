@@ -19,6 +19,7 @@ public class Product implements Principal {
     private int amount;
 	private boolean available;
     private String imageurl;
+    private java.util.List<String> dealer;
     
     public Product() {}
     
@@ -39,7 +40,15 @@ public class Product implements Principal {
         return anonymous;
     }
     
-    public int getId() {
+    public java.util.List<String> getDealer() {
+		return dealer;
+	}
+
+	public void setDealer(java.util.List<String> dealer) {
+		this.dealer = dealer;
+	}
+
+	public int getId() {
 		return id;
 	}
 
@@ -112,6 +121,7 @@ public class Product implements Principal {
 		this.amount=dto.getAmount();
 		this.available = dto.getAvailable();
 	    this.imageurl= dto.getImageURL();
+	    this.dealer= dto.getDealer();
 	}
 	
 	public ProductDto convertToDto() {
@@ -124,6 +134,7 @@ public class Product implements Principal {
 	    dto.setAmount(amount);
 		dto.setAvailable(available);
 	    dto.setImageURL(imageurl);
+	    dto.setDealer(dealer);
 		return dto;
 	}
 }

@@ -8,6 +8,13 @@ public class Fournit implements Principal{
 	private int pno;
 	private int sno;
 	
+	public Fournit() {}
+	
+	Fournit(int pno, int sno){
+		this.pno=pno;
+		this.sno=sno;
+	}
+	
 	public int getPno() {
 		return pno;
 	}

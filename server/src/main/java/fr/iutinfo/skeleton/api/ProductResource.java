@@ -1,17 +1,27 @@
 package fr.iutinfo.skeleton.api;
 
-import fr.iutinfo.skeleton.common.dto.ProductDto;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static fr.iutinfo.skeleton.api.BDDFactory.getDbi;
+import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static fr.iutinfo.skeleton.api.BDDFactory.getDbi;
-import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.MediaType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import fr.iutinfo.skeleton.common.dto.ProductDto;
 
 @Path("/product")
 @Produces(MediaType.APPLICATION_JSON)
@@ -19,6 +29,8 @@ import static fr.iutinfo.skeleton.api.BDDFactory.tableExist;
 public class ProductResource {
 	final static Logger logger=LoggerFactory.getLogger(ProductResource.class);
 	private static ProductDao dao=getDbi().open(ProductDao.class);
+	private static FournitDao daoFournit=getDbi().open(FournitDao.class);
+	private static SocieteDao daoSociete=getDbi().open(SocieteDao.class);
 	
 	public ProductResource() throws SQLException {
 		if(!tableExist("products")) {
@@ -26,23 +38,37 @@ public class ProductResource {
 			dao.createProductTable();
 			dao.insert(new Product(0, "nom0", 2));
 		}
+		if(!tableExist("fournit")) {
+			logger.debug("Create table fournit");
+			daoFournit.createFournitTable();
+			daoFournit.insert(new Fournit(0, 2));
+		}
 	}
 	
+	//Création comporte l'Id de la société pour Fournit
 	@POST
 	public ProductDto createProduct(ProductDto dto) {
 		Product product=new Product();
 		product.initFromDto(dto);
-		int id=dao.insert(product);
-		dto.setId(id);
+		int pno=dao.insert(product);
+		dto.setId(pno);
+		Fournit fournit=new Fournit(pno,dto.getTmpSociete());
+		daoFournit.insert(fournit);
 		return dto;
 	}
 	
 	@GET
-	@Path("/{name}")
-	public ProductDto getProduct(@PathParam("name") String name) {
-		Product product=dao.findByName(name);
+	@Path("/{id}")
+	public ProductDto getProduct(@PathParam("id") int id) {
+		Product product=dao.findById(id);
 		if(product==null) 
 			throw new WebApplicationException(404);
+		List<Fournit> fournit = daoFournit.findBySociete(product.getId());
+		List<String> societes = new ArrayList<>();
+		for (Fournit f : fournit) {
+			societes.add(daoSociete.findBySno(f.getSno()).getName()); 
+		}
+		product.setDealer(societes);
 		return product.convertToDto();
 	}
 	

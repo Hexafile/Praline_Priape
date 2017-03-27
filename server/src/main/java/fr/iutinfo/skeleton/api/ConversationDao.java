@@ -12,7 +12,7 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface ConversationDao {
 	
-	@SqlUpdate("create table convs(id integer autoincrement primary key, demandeurId int, conseilleId int, termine boolean, note int)")
+	@SqlUpdate("create table convs(id integer primary key autoincrement, demandeurId int, conseilleId int, termine boolean, note int)")
 	void createConversationTable();
 	
 	@SqlUpdate("insert into convs(demandeurId, conseilleId, termine, note) values(:demandeurId, :conseilleId, :termine, :note)")

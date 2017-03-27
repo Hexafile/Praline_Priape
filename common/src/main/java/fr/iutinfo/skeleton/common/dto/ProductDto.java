@@ -16,6 +16,8 @@ public class ProductDto implements Principal {
     private int amount;
 	private boolean available;
     private String imageurl;
+    private java.util.List<String> dealer;
+    private int tmpSociete;
 
 	public int getId() {
 		return id;
@@ -23,6 +25,22 @@ public class ProductDto implements Principal {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getTmpSociete() {
+		return tmpSociete;
+	}
+
+	public void setTmpSociete(int tmpSociete) {
+		this.tmpSociete = tmpSociete;
+	}
+
+	public java.util.List<String> getDealer() {
+		return dealer;
+	}
+
+	public void setDealer(java.util.List<String> dealer) {
+		this.dealer = dealer;
 	}
 
 	public String getDescription() {

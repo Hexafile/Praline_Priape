@@ -8,7 +8,7 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface FournitDao {
 	
-	@SqlUpdate("create table fournit (idproduct integer primary key not null, idsociete integer primary key not null, constraint fkidp foreign key(idproduct) references products(id) on delete cascade, constraint fksno foreign key(idsociete) references societe(id) on delete cascade)")
+	@SqlUpdate("create table fournit (idproduct integer not null, idsociete integer not null, primary key(idproduct,idsociete), constraint fkidp foreign key(idproduct) references products(id) on delete cascade, constraint fksno foreign key(idsociete) references societe(id) on delete cascade)")
 	void createFournitTable();
 	
 	@SqlUpdate("insert into fournit values(:pno,:sno)")

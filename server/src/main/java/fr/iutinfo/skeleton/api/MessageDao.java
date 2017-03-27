@@ -12,7 +12,7 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface MessageDao {
 
-	@SqlUpdate("create table msgs(id integer autoincrement primary key, writerId int, date date, message varchar(140))")
+	@SqlUpdate("create table msgs(id integer primary key autoincrement, writerId int, date date, message varchar(140))")
 	void createConversationTable();
 	
 	@SqlUpdate("insert into msgs(writerId, date, message) values(:idWriter, :date, :msg)")

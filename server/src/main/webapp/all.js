@@ -215,6 +215,39 @@ function afficheListProducts(data) {
 	$("#mainContainer").append(ligne);
 }
 
+function afficheListUsers {
+    $.ajax({
+            type: "GET"
+            , url: "v1/user"
+			, dataType: 'json'
+			, success: function (data) {
+               var result = "";
+                $("#mainContainer").empty();
+                var tab = $('<table id=\'tableau\'> </table>');
+                tab.appendTo("#mainContainer");
+                
+                $.each(data, function (i,item) {
+                    result += "<tr><td>"+item.id+"</td><td>";
+                    switch(item.role){
+                        case 0:
+                          break;
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                    }
+                    booksDiv.html(result);
+                }); 
+            }
+			, error: function (jqXHR, textStatus, errorThrown) {
+				alert('error: ' + textStatus);
+                location.replace(connection.html);
+			}
+    });
+}
+
 function afficheUser(data) {
 	console.log(data);
 	$("#reponse").html(data.id + " : <b>" + data.alias + "</b> (" + data.name + ")");

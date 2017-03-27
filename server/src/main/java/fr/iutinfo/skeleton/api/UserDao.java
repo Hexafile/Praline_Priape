@@ -38,6 +38,10 @@ public interface UserDao {
     @SqlQuery("select * from users where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     User findById(@Bind("id") int id);
+    
+    @SqlQuery("select * from users limit :t offset :f")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<User> findFromTo(@Bind("f") int f,@Bind("t") int t);
 
     void close();
 }

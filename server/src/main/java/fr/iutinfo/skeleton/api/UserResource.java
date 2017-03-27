@@ -28,7 +28,6 @@ public class UserResource {
             admin.setRole(3);
             admin.setPassword("admin");
             dao.insert(admin);
-            
         }
     }
 
@@ -50,6 +49,18 @@ public class UserResource {
             throw new WebApplicationException(404);
         }
         return user.convertToDto();
+    }
+    
+    @GET
+    @Path("/limit/{first}/{second}")
+    public List<UserDto> getUser(@PathParam("first") int first,@PathParam("second") int second) {
+        List<User> users;
+        if (first == 0 && second ==0) {
+            users = dao.all();
+        }else{
+        	users= dao.findFromTo(first, second);
+        }
+        return users.stream().map(User::convertToDto).collect(Collectors.toList());
     }
 
     @GET

@@ -135,7 +135,7 @@ function listProductsBdd() {
 }
 
 function listProductsGeneric(url) {
-	$.getJSON(url, function(datat) {
+	$.getJSON(url, function(data) {
 		afficheListProducts(data)
 	});
 }
@@ -144,10 +144,11 @@ function afficheListProducts(data) {
 	console.log(data);
 	var ligne;
 	for(var i=0; i<data.length; i++) {
-		if(i%6==0) ligne=$("<div class=\"row\"></div>");
+		/*if(i%6==0) ligne=$("<div class=\"row\"></div>");
 		var divProduct=$("<div class=\"col-sm-6 col-md-2\"></div>");
 		var thumbnail=$("<div class=\"thumbnail\"></div>");
-		thumbnail.append
+		thumbnail.append*/
+		console.log(data[i].id+'  '+data[i].name+'  '+data[i].description+'  '+data[i].basePrice);
 	} 
 	
 }

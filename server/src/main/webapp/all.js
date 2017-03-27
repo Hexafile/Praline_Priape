@@ -38,6 +38,8 @@ function getSecure(url) {
 				else {
 					sessionStorage.setItem("login", $("#userlogin").val());
 					sessionStorage.setItem("password", $("#passwdlogin").val());
+                    sessionStorage.setItem("id",data.id);
+                    sessionStorage.setItem("role",data.role);
 					$("#navRight").append("<p id=\"bienvenue\">Bienvenue, " + sessionStorage.getItem("login") + "</p>");
 					loadPage();
 				}
@@ -52,6 +54,28 @@ function getSecure(url) {
 			afficheUser(data);
 		});
 	}
+}
+
+var boolean = function verifie(name){
+    if ($("login").val() != "" && $("id").val() != null && $("role").val() != null) {
+        $.ajax({
+            type: "GET"
+            , url: url
+			, dataType: 'json'
+			, beforeSend: function (req) {
+				req.setRequestHeader("Authorization", "Basic " + $("login").val() + ":" + $("password").val());
+			}
+			, success: function (data) {
+				afficheUser(data);
+                return true;
+			}
+			, error: function (jqXHR, textStatus, errorThrown) {
+				alert('error: ' + textStatus);
+                location.replace(connection.html);
+                return false;
+			}
+		});
+    }
 }
 
 /*
@@ -204,8 +228,6 @@ function deconnection() {
 	$("#bienvenue").remove();
 	loadPage();
 }
-
-
 
 function tailleCarousel() {
 	var height = document.body.clientHeight - 50;

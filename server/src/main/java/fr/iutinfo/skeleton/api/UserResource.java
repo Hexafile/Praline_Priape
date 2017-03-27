@@ -24,7 +24,11 @@ public class UserResource {
         if (!tableExist("users")) {
             logger.debug("Crate table users");
             dao.createUserTable();
-            dao.insert(new User(0, "Margaret Thatcher", "la Dame de fer"));
+            User admin = new User("Admin","Admin");
+            admin.setRole(3);
+            admin.setPassword("admin");
+            dao.insert(admin);
+            
         }
     }
 

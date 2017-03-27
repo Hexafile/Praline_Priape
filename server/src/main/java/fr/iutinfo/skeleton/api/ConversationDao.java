@@ -38,6 +38,4 @@ public interface ConversationDao {
 	void delete(@Bind("id") int id);
 	
 	void close();
-	
-
 }

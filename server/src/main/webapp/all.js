@@ -224,6 +224,11 @@ function cleanPage() {
 	$("#carousel").hide();
 	$("#panierContainer").hide();
 	$("#whishlistContainer").hide();
+    $("#inscriptionContainer").hide();
+    $("#connectionContainer").hide();
+    $("#addProductContainer").hide();
+ 	$("#descriptionContainer").hide();
+    $("#contactContainer").hide();
 }
 
 function panierShow(){
@@ -236,8 +241,35 @@ function whishlistShow(){
     $("#whishlistContainer").show();
 }
 
+function signUp() {
+ 	cleanPage();
+ 	$("#inscriptionContainer").show();
+ }
+ 
+ function signIn() {
+ 	cleanPage();
+ 	$("#connectionContainer").show();
+ }
+ 
+ function description() {
+ 	cleanPage();
+ 	$("#descriptionContainer").show();
+ }
+
+function contactShow(){
+	cleanPage();
+	$("#contactContainer").show();
+ }
+ 
+ function ajoutProduct() {
+ 	cleanPage();
+ 	$("#addProductContainer").show();
+ }
+
 //Ajout d'un item au panier, ajouter un champs hidden dans le html, pour chaque produit
 //<input type="hidden" value="valeur_que_tu_veux_transmettre"> 
 function ajoutPanier(panier, valeur){
     panier.push(valeur);
 }
+
+

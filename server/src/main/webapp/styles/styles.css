@@ -60,7 +60,7 @@
 
 
 #panierContainer .thumbnail{
-    display: inline-block !important;
+    display: inline-block !important;   
     border: 0px !important;
 }
 #whishlistContainer .thumbnail{

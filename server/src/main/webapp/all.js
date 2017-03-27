@@ -194,6 +194,7 @@ function loadPage() {
 		$("#signinBtn").hide();
 	}
 	cleanPage();
+	listProductsBdd();
 	$("#mainContainer").show();
 	$("#carousel").show();
 }

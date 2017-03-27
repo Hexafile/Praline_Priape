@@ -10,7 +10,7 @@ public class Fournit implements Principal{
 	
 	public Fournit() {}
 	
-	Fournit(int pno, int sno){
+	public Fournit(int pno, int sno){
 		this.pno=pno;
 		this.sno=sno;
 	}

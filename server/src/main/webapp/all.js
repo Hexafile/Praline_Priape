@@ -264,3 +264,9 @@ function contactShow(){
 	cleanPage();
 	$("#contactContainer").show();
 }
+
+//Ajout d'un item au panier, ajouter un champs hidden dans le html, pour chaque produit
+//<input type="hidden" value="valeur_que_tu_veux_transmettre"> 
+function ajoutPanier(panier, valeur){
+    panier.push(valeur);
+}

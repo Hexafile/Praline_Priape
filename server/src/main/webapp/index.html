@@ -376,6 +376,11 @@
 	<!-- Script -->
 	<script type="text/javascript">
 		window.onload = loadPage();
+        
+        //initialisation du panier
+        var panier = [];
+        sessionStorage.setItem("panier", panier);
+        
 		$("#signupBtn").click(function () {
 			signUp()
 		});

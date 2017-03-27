@@ -78,3 +78,8 @@
 .list-group-item:hover{
     border: 1px black solid;
 }
+
+.logo{
+    width: 25px !important;
+    height: 25px !important;
+}

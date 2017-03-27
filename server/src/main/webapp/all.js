@@ -141,16 +141,26 @@ function listProductsGeneric(url) {
 }
 
 function afficheListProducts(data) {
-	console.log(data);
+	$("#mainContainer").empty();
 	var ligne;
 	for(var i=0; i<data.length; i++) {
-		/*if(i%6==0) ligne=$("<div class=\"row\"></div>");
+		console.log(data[i]);
+		if(i%6==0)  {
+			if(i!=0) $("#mainContainer").append(ligne);
+			ligne=$("<div class=\"row\"></div>");
+		}
 		var divProduct=$("<div class=\"col-sm-6 col-md-2\"></div>");
 		var thumbnail=$("<div class=\"thumbnail\"></div>");
-		thumbnail.append*/
-		console.log(data[i].id+'  '+data[i].name+'  '+data[i].description+'  '+data[i].basePrice);
+		thumbnail.append($("<a href=\"#\" class=\"linkProduct\"><img src=\"img/produits/bijou1.JPG\" alt =\"...\"></a>"));
+		var caption=$("<div class=\"caption\"></div>");
+		caption.append($("<h3>"+data[i].name+"</h3>"));
+		caption.append($("<p>"+data[i].description+"</p>"));
+		caption.append($("<p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Acheter</a> <a href=\"#\" class=\"btn btn-default\" role=\"button\">Souhaiter</a></p>"));
+		thumbnail.append(caption);
+		divProduct.append(thumbnail);
+		ligne.append(divProduct);
 	} 
-	
+	$("#mainContainer").append(ligne);
 }
 
 function afficheUser(data) {
@@ -237,6 +247,7 @@ function cleanPage() {
 	$("#carousel").hide();
 	$("#panierContainer").hide();
 	$("#whishlistContainer").hide();
+	$("#contactContainer").hide();
 }
 
 function panierShow(){
@@ -247,4 +258,9 @@ function panierShow(){
 function whishlistShow(){
     cleanPage();
     $("#whishlistContainer").show();
+}
+
+function contactShow(){
+	cleanPage();
+	$("#contactContainer").show();
 }

@@ -15,18 +15,18 @@ public class User implements Principal {
 	private static User anonymous = new User("Anonymous", "anonym");
 
 	private int id = 0;
-	private int role = 0;
+	private int role = 0;//0: utilisateur, 1: conseille, 2:vendeur, 3: admin
 	private String name;
 	private String surname;
 	private String alias;
 	private String adresse;
 	private String societe;
 	private int tel;
-	private int sexe;
+	private int sexe;//0: femme, 1: homme, autre: autre
 	private int ptsFidelite;
 	private java.util.Date dateNaissance = new java.util.Date();
 	private java.util.Date dateInscription = new java.util.Date();
-	private boolean newsLetter;
+	private boolean newsLetter;//0 non inscrit, 1 inscrit
 	private String email;
 	private String password;
 	private String passwdHash;

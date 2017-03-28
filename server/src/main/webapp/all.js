@@ -35,6 +35,10 @@ function getSecure(url) {
 				if (data.id == -1) {
 					$("#erreurSaisie").text("Le nom d'utilisateur ou le mot de passe est faux");
 				}
+                if(role(name)===3){
+                    $("#nav navbar-nav pull-left").append("<li><a id='lienUsers' href='#'>Liste Utilisateurs</a></li>");
+                    $("#nav navbar-nav pull-left").append("<li><a id='lienProducts' href='#'>Liste Produits</a></li>");
+                }
 				else {
 					sessionStorage.setItem("login", $("#userlogin").val());
 					sessionStorage.setItem("password", $("#passwdlogin").val());
@@ -56,8 +60,10 @@ function getSecure(url) {
 	}
 }
 
-function verifie(name){
+//affichage : 0 afficherUser
+function verifieEtAffiche(affichage){
     if (sessionStorage.getItem("login") != "" && sessionStorage.getItem("id") != null && sessionStorage.getItem("role") != null) {
+        var name =
         $.ajax({
             type: "GET"
             , url: "v1/secure/who"
@@ -66,12 +72,10 @@ function verifie(name){
 				req.setRequestHeader("Authorization", "Basic " + sessionStorage.getItem("login") + ":" + sessionStorage.getItem("password"));
 			}
 			, success: function (data) {
-                if(data.id!==sessionStorage.getItem("id") || sessionStorage.getItem("login")!==data.login || sessionStorage.getItem("role")!==data.role){
-                    return false;
-                }
-                if(role(name)===3){
-                    afficheUser(data);
-                    return true;
+                if(data.id===sessionStorage.getItem("id") && sessionStorage.getItem("login")===data.login && sessionStorage.getItem("role")===data.role && role()===3){
+                    if(affichage===0){
+                        afficheListUsers();
+                    }
                 }
 			}
 			, error: function (jqXHR, textStatus, errorThrown) {
@@ -82,8 +86,8 @@ function verifie(name){
     console.log("temoin verif");
     return false;
 }
-function role(role){
-     $.ajax({
+function role(){
+     return $.ajax({
             type: "GET"
             , url: url
 			, dataType: 'json'
@@ -91,16 +95,11 @@ function role(role){
 				req.setRequestHeader("Authorization", "Basic " + $("login").val() + ":" + $("password").val());
 			}
 			, success: function (data) {
-                if(role(name)===3){
-                    afficheUser(data);
-                    return true;
-                }
-                return false;
+                return data.role;
 			}
 			, error: function (jqXHR, textStatus, errorThrown) {
 				alert('error: ' + textStatus);
                 location.replace(connection.html);
-                return false;
 			}
 		});
 }
@@ -217,30 +216,58 @@ function afficheListProducts(data) {
 	$("#mainContainer").append(ligne);
 }
 
-function afficheListUsers {
+function afficheListUsers() {
     $.ajax({
             type: "GET"
-            , url: "v1/user"
+            , url: "v1/user/limit/1/3"
 			, dataType: 'json'
 			, success: function (data) {
                var result = "";
                 $("#mainContainer").empty();
-                var tab = $('<table id=\'tableau\'> </table>');
+                var tab = document.createElement('table');
                 tab.appendTo("#mainContainer");
-                
+                result+= "<table id=\'tableau\'><thead><tr><th>Id</th><th>Role</th><th>Préom</th><th>Nom</th><th>Login</th><th>Adresse</th><th>Societe</th><th>Téléphone</th><th>Sexe</th><th>Points Fid.</th><th>Date naissance</th><th>Date inscription</th><th>Newsletter</th><th>Email</th>"
                 $.each(data, function (i,item) {
                     result += "<tr><td>"+item.id+"</td><td>";
                     switch(item.role){
                         case 0:
+                            result +="Utilisateur</td><td>";
                           break;
                         case 1:
+                            result +="Conseillé</td><td>";
                             break;
                         case 2:
+                            result +="Vendeur</td><td>";
                             break;
                         case 3:
+                            result +="Admin</td><td>";
                             break;
                     }
-                    booksDiv.html(result);
+                    result +=item.name+"</td><td>";
+                    result +=item.surname+"</td><td>";
+                    result +=item.alias+"</td><td>";
+                    result +=item.adresse+"</td><td>";
+                    result +=item.societe+"</td><td>";
+                    result +=item.tel+"</td><td>";
+                    if(item.sexe===0){
+                        result +="femme</td><td>";
+                    }if(item.sexe===1){
+                        result +="homme</td><td>";
+                    }else{
+                        result +="autre</td><td>";
+                    }
+                    result +=item.ptsFidelite+"</td><td>";
+                    var dateNaissance = item.dateNaissance;
+                    result +=String(dateNaissance)+"</td><td>";
+                    var dateInscription = item.dateInscription;
+                    result +=String(dateInscription)+"</td><td>";
+                    if(item.newsLetter){
+                        result +="inscrit</td><td>";
+                    }else{
+                        result +="non inscrit</td><td>";
+                    }
+                    result +=item.email"</td></tr></table>";
+                    tab.innerHTML=result;
                 }); 
             }
 			, error: function (jqXHR, textStatus, errorThrown) {
@@ -349,6 +376,16 @@ function contactShow(){
  }
  
  function ajoutProduct() {
+ 	cleanPage();
+ 	$("#addProductContainer").show();
+ }
+
+ function userListShow() {
+ 	cleanPage();
+ 	verifieEtAffiche(0);
+ }
+
+ function productListShow() {
  	cleanPage();
  	$("#addProductContainer").show();
  }

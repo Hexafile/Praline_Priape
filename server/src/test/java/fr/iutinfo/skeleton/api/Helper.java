@@ -19,23 +19,23 @@ public class Helper {
     }
 
     static User createUserWithName(String name) {
-        User user = new User(0, name);
+        User user = new User(name);
         return createUser(user);
     }
 
     static User createUserWithAlias(String name, String alias) {
-        User user = new User(0, name, alias);
+        User user = new User(name, alias);
         return createUser(user);
     }
 
     static User createUserWithEmail(String name, String email) {
-        User user = new User(0, name);
+        User user = new User(name);
         user.setEmail(email);
         return createUser(user);
     }
 
     public static User createUserWithPassword(String name, String passwd, String salt) {
-        User user = new User(0, name);
+        User user = new User(name);
         user.setSalt(salt);
         user.setPassword(passwd);
         logger.debug("createUserWithPassword Hash : " + user.getPasswdHash());
@@ -50,7 +50,7 @@ public class Helper {
 
 
     private static User createFullUSer(String name, String alias, String email, String paswword) {
-        User user = new User(0, name);
+        User user = new User(name);
         user.setAlias(alias);
         user.setEmail(email);
         user.setPassword(paswword);

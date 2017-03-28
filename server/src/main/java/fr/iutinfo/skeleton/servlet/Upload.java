@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/servlet/Upload")
 public class Upload extends HttpServlet {
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		res.getWriter().println("TEST TEST TEST TEST");
 	}
 
 }

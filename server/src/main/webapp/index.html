@@ -10,6 +10,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="all.js"></script>
 	<link rel="stylesheet" href="styles/styles.css">
+    
+    <link rel="icon" type="image/png" href="img/favicon.PNG" />
 </head>
 
 <body>
@@ -34,9 +36,9 @@
 				<!-- Message Bienvenue-->
 				<li id="navRight"></li>
 				<!-- Bouton s'inscire-->
-				<li><a id="signupBtn" href="inscription.html"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+				<li><a id="signupBtn" href="#"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
 				<!-- Bouton se connecter -->
-				<li><a id="signinBtn" href="connection.html"><span class="glyphicon glyphicon-log-in"></span> Se Connecter</a></li>
+				<li><a id="signinBtn" href="#"><span class="glyphicon glyphicon-log-in"></span> Se Connecter</a></li>
 				<!-- Bouton mon compte-->
 				<li id="monCompteBtn" role="presentation" class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     Mon Compte <span class="caret"></span>
@@ -409,6 +411,15 @@
         $("#lien1Btn").click(function () {
 			ajoutProduct();
 		});
+        $("#lien2Btn").click(function(){
+           contactShow(); 
+        });
+        $("#signupBtn").click(function(){
+           signUp(); 
+        });
+        $("#signinBtn").click(function(){
+           signIn(); 
+        });
         $("#whishlistBtn").click(function () {
 			whishlistShow();
 		});
@@ -418,6 +429,9 @@
         $("#lienProducts").click(function () {
 			productListShow();
 		});
+        $(".linkProduct").click(function(){
+           description();            
+        });
 		tailleCarousel();
 	</script>
 </body>

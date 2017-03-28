@@ -84,7 +84,6 @@ function verifieEtAffiche(affichage){
 		});
     }
     console.log("temoin verif");
-    return false;
 }
 function role(){
      return $.ajax({

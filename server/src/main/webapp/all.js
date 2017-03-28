@@ -217,7 +217,7 @@ function afficheListProducts(data) {
 	$("#mainContainer").append(ligne);
 }
 
-function afficheListUsers {
+function afficheListUsers() {
     $.ajax({
             type: "GET"
             , url: "v1/user"

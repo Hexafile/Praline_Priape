@@ -1,0 +1,39 @@
+Dans ce document, nous allons vous expliquer le fonctionnement des différentes
+fonctions javascript présentes dans le fichier all.js
+
+getSecure(url) :
+Vérifie si le login et le mode passe sont corrects.
+Si c'est le cas, l'utilisateur est connecté au site
+
+verifieEtAffichage(affichage) :
+Vérifie si l'utilisateur est un admin.
+Si c'est le cas, la liste des utilisateurs est affichée
+
+role(role) :
+Utilisée par la fonction précédente pour la vérification de role
+
+postProductGeneric(name, quantite, description, prix, promotion, imagePath, url) :
+Permet d'ajouter de nouveau produit à la base de données
+
+postUserGeneric(name, alias, email, pwd, url) :
+Permet d'ajouter un nouvel utilisateur à la base de données
+
+afficheListProducts(data) :
+Permet d'afficher la liste des produits renseignés dans la base de données
+
+afficheListUsers() :
+Permet d'afficher la liste des utilisateurs renseignés dans la base de données
+
+loadPage() :
+Cette fonction est utilisée pour afficher la version initiale de la page d'accueil
+
+deconnection() :
+Cette fonction permet de se déconnecter du site web
+
+tailleCarousel() :
+Permet de définir les caractéristique de base du carousel d'images
+
+cleanPage() :
+Cache tous les containers de la page (permet d'alléger les fonctions en terme d'affichage)
+
+

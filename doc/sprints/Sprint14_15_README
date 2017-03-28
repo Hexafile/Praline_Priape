@@ -1,0 +1,15 @@
+Sprint 3, 4, 5 et 6 - Tâches réalisées 
+
+Scrum Master : Thomas Plouchard
+
+Application mobile :
+- résolution de bugs
+- tentative de liaison à la base de données
+
+Serveur REST : Terminé !
+
+Application WEB :
+- amélioration de l'aspect esthétique de la page
+- implémentation du rôle d'admin
+- affichage des images correspondant au produits ajoutés par l'utilisateur
+- résolution de bugs d'affichage

@@ -1,10 +1,12 @@
-Sprint 0 - Réalisations 
+Sprint 0 - Tâches réalisées
 
-	Git : 
-		- Initialisation de l'espace de travail
+Scrum Master : Jeremy Steenkiste
 
-	gestion Projet : 
-		-Répartition en équipe
-		-Backlog et créations des fonctionnalités et du graph d'avancement
-		-Répartition des tâches
+Git : 
+- Initialisation de l'espace de travail
+
+Gestion Projet : 
+-Répartition en équipe
+-Backlog et créations des fonctionnalités et du graphique d'avancement
+-Répartition des tâches
 

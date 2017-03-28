@@ -35,10 +35,10 @@ function getSecure(url) {
 				if (data.id == -1) {
 					$("#erreurSaisie").text("Le nom d'utilisateur ou le mot de passe est faux");
 				}
-                if(role(name)===3){
+                /*if(role()===3){
                     $("#nav navbar-nav pull-left").append("<li><a id='lienUsers' href='#'>Liste Utilisateurs</a></li>");
                     $("#nav navbar-nav pull-left").append("<li><a id='lienProducts' href='#'>Liste Produits</a></li>");
-                }
+                }*/
 				else {
 					sessionStorage.setItem("login", $("#userlogin").val());
 					sessionStorage.setItem("password", $("#passwdlogin").val());
@@ -265,7 +265,7 @@ function afficheListUsers() {
                     }else{
                         result +="non inscrit</td><td>";
                     }
-                    result +=item.email"</td></tr></table>";
+                    result +=item.email+"</td></tr></table>";
                     tab.innerHTML=result;
                 }); 
             }

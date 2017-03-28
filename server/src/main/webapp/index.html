@@ -376,7 +376,7 @@
 					<input type="text" name="email" id="emaildb" placeholder="Email" class="form-control" />
 					<input type="password" name="user" id="passwddb" placeholder="Mot de passe" class="form-control" /> </div>
 				<div class="btn-group" role="group">
-					<button type="button" id="post-bdd" class="btn btn-primary">Enregistrer</button>
+					<button type="button" id="test" class="btn btn-primary">Enregistrer</button>
 				</div>
 			</div>
 		</div>
@@ -391,10 +391,14 @@
 		$("#accueilBtn").click(function () {
 			loadPage()
 		});
-		$("#post-bdd").click(function () {
+		$("#test").click(function () {
 			postUserBdd($('#userdb').val(), $('#aliasdb').val(), $('#emaildb').val(), $('#passwddb').val());
             loadPage();
 		});
+        
+        
+        
+        
 		$("#post-product-bdd").click(function () {
 			postProductBdd($('#nameproduct').val(), $('#quantity').val(), $('#description').val(), $('#baseprice').val(), $('#promotionalamount').val(), $("#imagePath").val());
             loadPage();

@@ -46,7 +46,7 @@ public class MessageResource {
 	}
 	
 	@GET
-	@Path("/{name}") 
+	@Path("/{id}") 
 	public MessageDto getMessage(@PathParam("writer") int id) {
 		Message msg=dao.findById(id);
 		if(msg==null)

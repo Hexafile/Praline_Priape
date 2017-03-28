@@ -209,7 +209,7 @@ function afficheListProducts(data) {
 		var caption=$("<div class=\"caption\"></div>");
 		caption.append($("<h3>"+data[i].name+"</h3>"));
 		caption.append($("<p>"+data[i].description+"</p>"));
-		caption.append($("<p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Acheter</a> <a href=\"#\" class=\"btn btn-default\" role=\"button\">Souhaiter</a></p>"));
+		caption.append($("<p><a href=\"#\" id=\"acheterBtn\" class=\"btn btn-primary\" role=\"button\"><img src=\"img/panier.jpg\" class=\"logo2\"></a> <a href=\"#\" class=\"btn btn-default\" role=\"button\"><img src=\"img/coeur.png\" class=\"logo2\"></a></p>"));
 		thumbnail.append(caption);
 		divProduct.append(thumbnail);
 		ligne.append(divProduct);
